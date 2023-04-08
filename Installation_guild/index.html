@@ -230,6 +230,16 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_via/">
+        Trajectory Inference with VIA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_via_velo/">
+        Trajectory Inference with VIA and scVelo
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_aucell/">
         Pathway analysis with AUCell
       </a>
@@ -347,20 +357,31 @@
 <article class="md-content__inner md-typeset">
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h1>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
-<p>Pyomic now only can be installed by pypi</p>
+<p>Pyomic now only can be installed by pypi and you need to install <code>pytorch</code> at first</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To avoid potential dependency conflicts, installing within a pip environment is recommended.</p>
 </div>
 <h3 id="pip-prerequisites">pip prerequisites<a class="headerlink" href="#pip-prerequisites" title="Permanent link">¶</a></h3>
 <ul>
-<li>If using conda/mamba, then just run conda install -c anaconda pip and skip this section.</li>
+<li>If using conda/mamba, then just run <code>conda install -c anaconda pip</code> and skip this section.</li>
 <li>Install Python, we prefer the pyenv version management system, along with pyenv-virtualenv.</li>
 </ul>
 <h3 id="apple-silicon-prerequisites">Apple silicon prerequisites<a class="headerlink" href="#apple-silicon-prerequisites" title="Permanent link">¶</a></h3>
 <p>Installing Pyomic on a Mac with Apple Silicon is only possible using a native version of python. A native version of python can be installed with an Apple Silicon version of mambaforge (which can be installed from a native version of homebrew via <code>brew install --cask mambaforge</code>). </p>
 <h2 id="pip">Pip<a class="headerlink" href="#pip" title="Permanent link">¶</a></h2>
 <p>The <code>Pyomic</code> package can be installed via pip using one of the following commands:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span># ROCM 5.2 (Linux only)
+<span class="linenos" data-linenos="2 "></span>pip3 install torch torchvision torchaudio --extra-index-url
+<span class="linenos" data-linenos="3 "></span>pip install torch==1.13.1+rocm5.2 torchvision==0.14.1+rocm5.2 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/rocm5.2
+<span class="linenos" data-linenos="4 "></span># CUDA 11.6
+<span class="linenos" data-linenos="5 "></span>pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
+<span class="linenos" data-linenos="6 "></span># CUDA 11.7
+<span class="linenos" data-linenos="7 "></span>pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
+<span class="linenos" data-linenos="8 "></span># CPU only
+<span class="linenos" data-linenos="9 "></span>pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu
+</code></pre></div>
+<p>More about the installation can be found at <a href="https://pytorch.org/get-started/locally/">PyTorch</a>. After the installation of pytorch, we can start to install <code>Pyomic</code> by <code>pip</code></p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip install -U Pyomic
 </code></pre></div>
 Nightly version - clone this repo and run:
