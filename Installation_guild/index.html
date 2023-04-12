@@ -156,6 +156,15 @@
 <a class="md-nav__link" href="#pip">
     Pip
   </a>
+<nav aria-label="Pip" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pytorch">
+    Pytorch
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#development">
@@ -342,6 +351,15 @@
 <a class="md-nav__link" href="#pip">
     Pip
   </a>
+<nav aria-label="Pip" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pytorch">
+    Pytorch
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#development">
@@ -357,7 +375,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h1>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
-<p>Pyomic now only can be installed by pypi and you need to install <code>pytorch</code> at first</p>
+<p>Pyomic now only can be installed by pypi and you need to install <code>pytorch</code> and <code>deepforest</code> at first</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To avoid potential dependency conflicts, installing within a pip environment is recommended.</p>
@@ -371,26 +389,29 @@
 <p>Installing Pyomic on a Mac with Apple Silicon is only possible using a native version of python. A native version of python can be installed with an Apple Silicon version of mambaforge (which can be installed from a native version of homebrew via <code>brew install --cask mambaforge</code>). </p>
 <h2 id="pip">Pip<a class="headerlink" href="#pip" title="Permanent link">¶</a></h2>
 <p>The <code>Pyomic</code> package can be installed via pip using one of the following commands:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span># ROCM 5.2 (Linux only)
-<span class="linenos" data-linenos="2 "></span>pip3 install torch torchvision torchaudio --extra-index-url
-<span class="linenos" data-linenos="3 "></span>pip install torch==1.13.1+rocm5.2 torchvision==0.14.1+rocm5.2 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/rocm5.2
-<span class="linenos" data-linenos="4 "></span># CUDA 11.6
-<span class="linenos" data-linenos="5 "></span>pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
-<span class="linenos" data-linenos="6 "></span># CUDA 11.7
-<span class="linenos" data-linenos="7 "></span>pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
-<span class="linenos" data-linenos="8 "></span># CPU only
-<span class="linenos" data-linenos="9 "></span>pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu
+<h3 id="pytorch">Pytorch<a class="headerlink" href="#pytorch" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1"># ROCM 5.2 (Linux only)</span>
+<span class="linenos" data-linenos="2 "></span>pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--extra-index-url
+<span class="linenos" data-linenos="3 "></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.13.1+rocm5.2<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.14.1+rocm5.2<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/rocm5.2
+<span class="linenos" data-linenos="4 "></span><span class="c1"># CUDA 11.6</span>
+<span class="linenos" data-linenos="5 "></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.13.1+cu116<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.14.1+cu116<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/cu116
+<span class="linenos" data-linenos="6 "></span><span class="c1"># CUDA 11.7</span>
+<span class="linenos" data-linenos="7 "></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.13.1+cu117<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.14.1+cu117<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/cu117
+<span class="linenos" data-linenos="8 "></span><span class="c1"># CPU only</span>
+<span class="linenos" data-linenos="9 "></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.13.1+cpu<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.14.1+cpu<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
 </code></pre></div>
 <p>More about the installation can be found at <a href="https://pytorch.org/get-started/locally/">PyTorch</a>. After the installation of pytorch, we can start to install <code>Pyomic</code> by <code>pip</code></p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip install -U Pyomic
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip<span class="w"> </span>install<span class="w"> </span>deep-forest
+<span class="linenos" data-linenos="2 "></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>Pyomic
+<span class="linenos" data-linenos="3 "></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>numba
 </code></pre></div>
-Nightly version - clone this repo and run:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip install .
-</code></pre></div></p>
+<p>Nightly version - clone this repo and run:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</code></pre></div>
 <h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">¶</a></h2>
-<p>For development - clone this repo and run:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip install -e ".[dev,docs]"
-</code></pre></div></p>
+<p>For development - clone this repo and run:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev,docs]"</span>
+</code></pre></div>
 </article>
 </div>
 </div>
