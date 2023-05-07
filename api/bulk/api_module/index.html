@@ -828,7 +828,7 @@
 </div>
 <div class="doc doc-object doc-function">
 <h2 class="doc doc-heading" id="Pyomic.bulk._Gene_module.pyWGCNA.plot_sub_network">
-<code class="highlight language-python"><span class="n">plot_sub_network</span><span class="p">(</span><span class="n">mod_list</span><span class="p">,</span> <span class="n">correlation_threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">plot_gene_num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">plot_sub_network</span><span class="p">(</span><span class="n">mod_list</span><span class="p">,</span> <span class="n">correlation_threshold</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">plot_genes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plot_gene_num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 <a class="headerlink" href="#Pyomic.bulk._Gene_module.pyWGCNA.plot_sub_network" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
 <p>plot sub-network of a module</p>
@@ -861,6 +861,15 @@
 <td><p>correlation threshold</p></td>
 <td>
 <code>0.95</code>
+</td>
+</tr>
+<tr>
+<td><code>plot_genes</code></td>
+<td>
+</td>
+<td><p>genes to plot in the sub-network. If None, the hub genes will be ploted</p></td>
+<td>
+<code>None</code>
 </td>
 </tr>
 <tr>
