@@ -153,6 +153,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../Tutorials-bulk/t_network/">
         Protein-Protein interaction (PPI) analysis by String-db
       </a>
@@ -1415,6 +1420,9 @@ sc.settings.set_figure_params(dpi=80, facecolor='white')
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Infer-the-Tumor-from-scRNA-seq">Infer the Tumor from scRNA-seq<a class="anchor-link" href="#Infer-the-Tumor-from-scRNA-seq">¶</a></h2><p>Here we use Infercnvpy's example data to complete the tumour analysis, you can also refer to the official tutorial for this step: <a href="https://infercnvpy.readthedocs.io/en/latest/notebooks/tutorial_3k.html">https://infercnvpy.readthedocs.io/en/latest/notebooks/tutorial_3k.html</a></p>
+<p>So, we provide a utility function ov.utils.get_gene_annotation to supplement the coordinate information from GTF files. The following usage assumes that the adata.var_names correspond to “gene_name” attribute in the GTF file. For other cases, please check the function documentation.</p>
+<p>The GTF file used here can be downloaded from <a href="http://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M25/">GENCODE</a>.</p>
+<p>T2T-CHM13 gtf file can be download from <a href="https://figshare.com/ndownloader/files/40628072">figshare</a></p>
 </div>
 </div>
 </div>
@@ -1438,10 +1446,19 @@ sc.settings.set_figure_params(dpi=80, facecolor='white')
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">adata</span> <span class="o">=</span> <span class="n">cnv</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">maynard2020_3k</span><span class="p">()</span>
-<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">"ensg"</span><span class="p">,</span> <span class="s2">"chromosome"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">ov</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_gene_annotation</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span> <span class="n">gtf</span><span class="o">=</span><span class="s2">"gencode.v43.basic.annotation.gtf.gz"</span><span class="p">,</span>
+    <span class="n">gtf_by</span><span class="o">=</span><span class="s2">"gene_name"</span>
+<span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">adata = cnv.datasets.maynard2020_3k()
-adata.var.loc[:, ["ensg", "chromosome", "start", "end"]].head()</div>
+
+ov.utils.get_gene_annotation(
+    adata, gtf="gencode.v43.basic.annotation.gtf.gz",
+    gtf_by="gene_name"
+)
+</div>
 </div>
 </div>
 </div>
@@ -1543,6 +1560,43 @@ https://github.com/icbi-lab/infercnvpy/releases/download/d0.1.0/maynard2020_3k.h
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-3">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">[:,</span><span class="o">~</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'chrom'</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'chromosome'</span><span class="p">]</span><span class="o">=</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'chrom'</span><span class="p">]</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'start'</span><span class="p">]</span><span class="o">=</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'chromStart'</span><span class="p">]</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'end'</span><span class="p">]</span><span class="o">=</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'chromEnd'</span><span class="p">]</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'ensg'</span><span class="p">]</span><span class="o">=</span><span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="p">[</span><span class="s1">'gene_id'</span><span class="p">]</span>
+<span class="n">adata</span><span class="o">.</span><span class="n">var</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">"ensg"</span><span class="p">,</span> <span class="s2">"chromosome"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3">adata=adata[:,~adata.var['chrom'].isnull()]
+adata.var['chromosome']=adata.var['chrom']
+adata.var['start']=adata.var['chromStart']
+adata.var['end']=adata.var['chromEnd']
+adata.var['ensg']=adata.var['gene_id']
+adata.var.loc[:, ["ensg", "chromosome", "start", "end"]].head()</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -1563,7 +1617,7 @@ https://github.com/icbi-lab/infercnvpy/releases/download/d0.1.0/maynard2020_3k.h
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-3">
+<clipboard-copy for="cell-4">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1575,7 +1629,7 @@ https://github.com/icbi-lab/infercnvpy/releases/download/d0.1.0/maynard2020_3k.h
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">adata</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">adata</div>
+<div class="clipboard-copy-txt" id="cell-4">adata</div>
 </div>
 </div>
 </div>
@@ -1618,7 +1672,7 @@ https://github.com/icbi-lab/infercnvpy/releases/download/d0.1.0/maynard2020_3k.h
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-4">
+<clipboard-copy for="cell-5">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1653,7 +1707,7 @@ https://github.com/icbi-lab/infercnvpy/releases/download/d0.1.0/maynard2020_3k.h
 <span class="n">cnv</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
 <span class="n">cnv</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">cnv_score</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4"># We provide all immune cell types as "normal cells".
+<div class="clipboard-copy-txt" id="cell-5"># We provide all immune cell types as "normal cells".
 cnv.tl.infercnv(
     adata,
     reference_key="cell_type",
@@ -1735,7 +1789,7 @@ computing UMAP
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-5">
+<clipboard-copy for="cell-6">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1747,7 +1801,7 @@ computing UMAP
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"cnv_score"</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">sc.pl.umap(adata, color="cnv_score", show=False)</div>
+<div class="clipboard-copy-txt" id="cell-6">sc.pl.umap(adata, color="cnv_score", show=False)</div>
 </div>
 </div>
 </div>
@@ -1791,7 +1845,7 @@ computing UMAP
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-6">
+<clipboard-copy for="cell-7">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1806,7 +1860,7 @@ computing UMAP
     <span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s2">"cnv_score"</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.03</span><span class="p">,</span> <span class="s2">"cnv_status"</span>
 <span class="p">]</span> <span class="o">=</span> <span class="s2">"tumor"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">adata.obs["cnv_status"] = "normal"
+<div class="clipboard-copy-txt" id="cell-7">adata.obs["cnv_status"] = "normal"
 adata.obs.loc[
     adata.obs["cnv_score"]&gt;0.03, "cnv_status"
 ] = "tumor"</div>
@@ -1824,7 +1878,7 @@ adata.obs.loc[
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-7">
+<clipboard-copy for="cell-8">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1836,7 +1890,7 @@ adata.obs.loc[
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">pl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"cnv_status"</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">sc.pl.umap(adata, color="cnv_status", show=False)</div>
+<div class="clipboard-copy-txt" id="cell-8">sc.pl.umap(adata, color="cnv_status", show=False)</div>
 </div>
 </div>
 </div>
@@ -1887,7 +1941,7 @@ adata.obs.loc[
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-8">
+<clipboard-copy for="cell-9">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1900,7 +1954,7 @@ adata.obs.loc[
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">tumor</span><span class="o">=</span><span class="n">adata</span><span class="p">[</span><span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s1">'cnv_status'</span><span class="p">]</span><span class="o">==</span><span class="s1">'tumor'</span><span class="p">]</span>
 <span class="n">tumor</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">tumor=adata[adata.obs['cnv_status']=='tumor']
+<div class="clipboard-copy-txt" id="cell-9">tumor=adata[adata.obs['cnv_status']=='tumor']
 tumor.X.max()</div>
 </div>
 </div>
@@ -1939,7 +1993,7 @@ tumor.X.max()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-9">
+<clipboard-copy for="cell-10">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1965,7 +2019,7 @@ tumor.X.max()</div>
 <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
 <span class="n">sc</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">pca</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">svd_solver</span><span class="o">=</span><span class="s1">'arpack'</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">adata=tumor
+<div class="clipboard-copy-txt" id="cell-10">adata=tumor
 print('Preprocessing...')
 sc.pp.filter_cells(adata, min_genes=200)
 sc.pp.filter_genes(adata, min_cells=3)
@@ -2019,7 +2073,7 @@ computing PCA
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-10">
+<clipboard-copy for="cell-11">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2032,7 +2086,7 @@ computing PCA
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">n_pcs</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">sc</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">umap</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">sc.pp.neighbors(adata, n_pcs=20)
+<div class="clipboard-copy-txt" id="cell-11">sc.pp.neighbors(adata, n_pcs=20)
 sc.tl.umap(adata)</div>
 </div>
 </div>
@@ -2079,7 +2133,7 @@ computing UMAP
 <div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-11">
+<clipboard-copy for="cell-12">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2092,7 +2146,7 @@ computing UMAP
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ov</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">download_GDSC_data</span><span class="p">()</span>
 <span class="n">ov</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">download_CaDRReS_model</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">ov.utils.download_GDSC_data()
+<div class="clipboard-copy-txt" id="cell-12">ov.utils.download_GDSC_data()
 ov.utils.download_CaDRReS_model()</div>
 </div>
 </div>
@@ -2145,7 +2199,7 @@ ov.utils.download_CaDRReS_model()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-12">
+<clipboard-copy for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2157,7 +2211,7 @@ ov.utils.download_CaDRReS_model()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">adata</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span><span class="n">plot_df</span> <span class="o">=</span> <span class="n">ov</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">autoResolution</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span><span class="n">cpus</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">adata, res,plot_df = ov.single.autoResolution(adata,cpus=4)</div>
+<div class="clipboard-copy-txt" id="cell-13">adata, res,plot_df = ov.single.autoResolution(adata,cpus=4)</div>
 </div>
 </div>
 </div>
@@ -2372,7 +2426,7 @@ time: {} 11.607471227645874
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-13">
+<clipboard-copy for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2385,7 +2439,7 @@ time: {} 11.607471227645874
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">results_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'./'</span><span class="p">,</span> <span class="s1">'scanpyobj.h5ad'</span><span class="p">)</span>
 <span class="n">adata</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">results_file</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13">results_file = os.path.join('./', 'scanpyobj.h5ad')
+<div class="clipboard-copy-txt" id="cell-14">results_file = os.path.join('./', 'scanpyobj.h5ad')
 adata.write(results_file)</div>
 </div>
 </div>
@@ -2401,7 +2455,7 @@ adata.write(results_file)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-14">
+<clipboard-copy for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2414,7 +2468,7 @@ adata.write(results_file)</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">results_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'./'</span><span class="p">,</span> <span class="s1">'scanpyobj.h5ad'</span><span class="p">)</span>
 <span class="n">adata</span><span class="o">=</span><span class="n">sc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">results_file</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">results_file = os.path.join('./', 'scanpyobj.h5ad')
+<div class="clipboard-copy-txt" id="cell-15">results_file = os.path.join('./', 'scanpyobj.h5ad')
 adata=sc.read(results_file)
 </div>
 </div>
@@ -2443,7 +2497,7 @@ adata=sc.read(results_file)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-15">
+<clipboard-copy for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2455,7 +2509,7 @@ adata=sc.read(results_file)
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">CSB5</span><span class="o">/</span><span class="n">CaDRReS</span><span class="o">-</span><span class="n">Sc</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">!git clone https://github.com/CSB5/CaDRReS-Sc</div>
+<div class="clipboard-copy-txt" id="cell-16">!git clone https://github.com/CSB5/CaDRReS-Sc</div>
 </div>
 </div>
 </div>
@@ -2505,7 +2559,7 @@ Resolving deltas: 100% (156/156), done.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-16">
+<clipboard-copy for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2520,7 +2574,7 @@ Resolving deltas: 100% (156/156), done.
                                 <span class="n">modelpath</span><span class="o">=</span><span class="s1">'models/'</span><span class="p">,</span>
                                 <span class="n">output</span><span class="o">=</span><span class="s1">'result'</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">import ov
+<div class="clipboard-copy-txt" id="cell-17">import ov
 job=ov.single.Drug_Response(adata,scriptpath='CaDRReS-Sc',
                                 modelpath='models/',
                                 output='result')</div>
@@ -2556,7 +2610,7 @@ done!
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-17">
+<clipboard-copy for="cell-18">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2568,7 +2622,7 @@ done!
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17"></div>
+<div class="clipboard-copy-txt" id="cell-18"></div>
 </div>
 </div>
 </div>

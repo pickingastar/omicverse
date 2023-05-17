@@ -153,6 +153,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk/t_network/">
         Protein-Protein interaction (PPI) analysis by String-db
       </a>
@@ -467,6 +472,34 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1211">
+    v 1.2.11
+  </a>
+<nav aria-label="v 1.2.11" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_3">
+    bulk module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-130">
+    v 1.3.0
+  </a>
+<nav aria-label="v 1.3.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_4">
+    bulk module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -683,6 +716,34 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1211">
+    v 1.2.11
+  </a>
+<nav aria-label="v 1.2.11" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_3">
+    bulk module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-130">
+    v 1.3.0
+  </a>
+<nav aria-label="v 1.3.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_4">
+    bulk module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -805,6 +866,23 @@
 <h3 id="bulk2single-module_5">bulk2single module<a class="headerlink" href="#bulk2single-module_5" title="Permanent link">¶</a></h3>
 <ul>
 <li>update the plot argument of <code>bulk2single</code></li>
+</ul>
+<h2 id="v-1211">v 1.2.11<a class="headerlink" href="#v-1211" title="Permanent link">¶</a></h2>
+<h3 id="bulk-module_3">bulk module<a class="headerlink" href="#bulk-module_3" title="Permanent link">¶</a></h3>
+<ul>
+<li>fix <code>wilcoxon</code> method in <code>pyDEG.deg_analysis</code></li>
+<li>add the parameter setting of treatment and control group's name in <code>pyDEG.plot_boxplot</code></li>
+<li>fix the figure display not entire of <code>pyWGCNA.plot_matrix</code></li>
+<li>fix the category correlation failed by ont-hot in <code>pyWGCNA.analysis_meta_correlation</code></li>
+<li>fix the network display failed in <code>pyWGCNA.plot_sub_network</code> and updated the <code>utils.plot_network</code> to avoid this error.</li>
+</ul>
+<h2 id="v-130">v 1.3.0<a class="headerlink" href="#v-130" title="Permanent link">¶</a></h2>
+<h3 id="bulk-module_4">bulk module<a class="headerlink" href="#bulk-module_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>DEseq2</code> method to <code>pyDEG.deg_analysis</code></li>
+<li>add <code>pyGSEA</code> module in <code>bulk</code></li>
+<li>change the name of raw <code>pyGSEA</code> to <code>pyGSE</code> in <code>bulk</code></li>
+<li>add <code>get_gene_annotation</code> of <code>utils</code> to perform gene_name transformation</li>
 </ul>
 </article>
 </div>

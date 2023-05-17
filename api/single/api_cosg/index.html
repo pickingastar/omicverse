@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#Pyomic.single.cosg">
+<a class="md-skip" href="#omicverse.single.cosg">
           Skip to content
         </a>
 </div>
@@ -148,6 +148,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk/t_deg/">
         Different Expression Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
       </a>
 </li>
 <li class="md-nav__item">
@@ -281,23 +286,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single.cosg">
+<a class="md-nav__link" href="#omicverse.single.cosg">
     cosg()
   </a>
 <nav aria-label="cosg()" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single.cosg--parameters">
+<a class="md-nav__link" href="#omicverse.single.cosg--parameters">
     Parameters
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single.cosg--returns">
+<a class="md-nav__link" href="#omicverse.single.cosg--returns">
     Returns
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single.cosg--notes">
+<a class="md-nav__link" href="#omicverse.single.cosg--notes">
     Notes
   </a>
 </li>
@@ -313,12 +318,12 @@
 <article class="md-content__inner md-typeset">
 <h1>Api cosg</h1>
 <div class="doc doc-object doc-function">
-<h2 class="doc doc-heading" id="Pyomic.single.cosg">
-<code class="highlight language-python"><span class="n">Pyomic</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">cosg</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="s1">'CellTypes'</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="s1">'all'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">remove_lowly_expressed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">expressed_pct</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">n_genes_user</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">key_added</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">calculate_logfoldchanges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_raw</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="s1">'rest'</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single.cosg" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.single.cosg">
+<code class="highlight language-python"><span class="n">omicverse</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">cosg</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="s1">'CellTypes'</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="s1">'all'</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">remove_lowly_expressed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">expressed_pct</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">n_genes_user</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">key_added</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">calculate_logfoldchanges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_raw</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="s1">'rest'</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<a class="headerlink" href="#omicverse.single.cosg" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p>Marker gene identification for single-cell sequencing data using COSG.</p>
-<h4 id="Pyomic.single.cosg--parameters">Parameters<a class="headerlink" href="#Pyomic.single.cosg--parameters" title="Permanent link">¶</a></h4>
+<h4 id="omicverse.single.cosg--parameters">Parameters<a class="headerlink" href="#omicverse.single.cosg--parameters" title="Permanent link">¶</a></h4>
 <p>adata
     Annotated data matrix. Note: input paramters are simliar to the parameters used for scanpy's rank_genes_groups() function.
 groupby
@@ -345,7 +350,7 @@ layer
 reference
     If <code>'rest'</code>, compare each group to the union of the rest of the group.
     If a group identifier, compare with respect to this group.</p>
-<h4 id="Pyomic.single.cosg--returns">Returns<a class="headerlink" href="#Pyomic.single.cosg--returns" title="Permanent link">¶</a></h4>
+<h4 id="omicverse.single.cosg--returns">Returns<a class="headerlink" href="#omicverse.single.cosg--returns" title="Permanent link">¶</a></h4>
 <details class="names-">
 <summary>structured <code>np.ndarray</code> (<code>.uns['rank_genes_groups']</code>)</summary>
 <p>Structured array to be indexed by group id storing the gene names. Ordered according to scores.</p>
@@ -354,7 +359,7 @@ reference
 <summary>structured <code>np.ndarray</code> (<code>.uns['rank_genes_groups']</code>)</summary>
 <p>Structured array to be indexed by group id storing COSG scores for each gene for each
 group. Ordered according to scores.</p>
-</details> <h4 id="Pyomic.single.cosg--notes">Notes<a class="headerlink" href="#Pyomic.single.cosg--notes" title="Permanent link">¶</a></h4>
+</details> <h4 id="omicverse.single.cosg--notes">Notes<a class="headerlink" href="#omicverse.single.cosg--notes" title="Permanent link">¶</a></h4>
 <p>Contact: Min Dai, daimin@zju.edu.cn
 Examples</p>
 <hr/>
@@ -370,7 +375,7 @@ sc.pl.rank_genes_groups(adata, key='cosg')</p>
 </blockquote>
 </blockquote>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_cosg.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_cosg.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="312 "></span><span class="k">def</span> <span class="nf">cosg</span><span class="p">(</span>
 <span class="linenos" data-linenos="313 "></span>    <span class="n">adata</span><span class="p">,</span>
 <span class="linenos" data-linenos="314 "></span>    <span class="n">groupby</span><span class="o">=</span><span class="s1">'CellTypes'</span><span class="p">,</span>

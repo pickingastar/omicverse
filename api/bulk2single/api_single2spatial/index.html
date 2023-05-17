@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#Pyomic.bulk2single.Single2Spatial">
+<a class="md-skip" href="#omicverse.bulk2single.Single2Spatial">
           Skip to content
         </a>
 </div>
@@ -148,6 +148,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk/t_deg/">
         Different Expression Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
       </a>
 </li>
 <li class="md-nav__item">
@@ -281,33 +286,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk2single.Single2Spatial">
+<a class="md-nav__link" href="#omicverse.bulk2single.Single2Spatial">
     Single2Spatial
   </a>
 <nav aria-label="Single2Spatial" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.__init__">
+<a class="md-nav__link" href="#omicverse.bulk2single._single2spatial.Single2Spatial.__init__">
     __init__()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.train">
+<a class="md-nav__link" href="#omicverse.bulk2single._single2spatial.Single2Spatial.train">
     train()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.load">
+<a class="md-nav__link" href="#omicverse.bulk2single._single2spatial.Single2Spatial.load">
     load()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.save">
+<a class="md-nav__link" href="#omicverse.bulk2single._single2spatial.Single2Spatial.save">
     save()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.spot_assess">
+<a class="md-nav__link" href="#omicverse.bulk2single._single2spatial.Single2Spatial.spot_assess">
     spot_assess()
   </a>
 </li>
@@ -323,14 +328,14 @@
 <article class="md-content__inner md-typeset">
 <h1>Api single2spatial</h1>
 <div class="doc doc-object doc-class">
-<h2 class="doc doc-heading" id="Pyomic.bulk2single.Single2Spatial">
-<code>Pyomic.bulk2single.Single2Spatial</code>
-<a class="headerlink" href="#Pyomic.bulk2single.Single2Spatial" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.bulk2single.Single2Spatial">
+<code>omicverse.bulk2single.Single2Spatial</code>
+<a class="headerlink" href="#omicverse.bulk2single.Single2Spatial" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p class="doc doc-class-bases">
         Bases: <code>object</code></p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk2single/_single2spatial.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk2single/_single2spatial.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 15 "></span><span class="k">class</span> <span class="nc">Single2Spatial</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="linenos" data-linenos=" 16 "></span>
 <span class="linenos" data-linenos=" 17 "></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">single_data</span><span class="p">:</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
@@ -525,9 +530,9 @@
 </details>
 <div class="doc doc-children">
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk2single._single2spatial.Single2Spatial.__init__">
+<h3 class="doc doc-heading" id="omicverse.bulk2single._single2spatial.Single2Spatial.__init__">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">single_data</span><span class="p">,</span> <span class="n">spatial_data</span><span class="p">,</span> <span class="n">celltype_key</span><span class="p">,</span> <span class="n">spot_key</span><span class="o">=</span><span class="p">[</span><span class="s1">'xcoord'</span><span class="p">,</span> <span class="s1">'ycoord'</span><span class="p">],</span> <span class="n">top_marker_num</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">marker_used</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gpu</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.__init__" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk2single._single2spatial.Single2Spatial.__init__" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Init Single2Spatial model</p>
 <p><strong>Parameters:</strong></p>
@@ -612,7 +617,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk2single/_single2spatial.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk2single/_single2spatial.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="17 "></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">single_data</span><span class="p">:</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
 <span class="linenos" data-linenos="18 "></span>             <span class="n">spatial_data</span><span class="p">:</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
 <span class="linenos" data-linenos="19 "></span>             <span class="n">celltype_key</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span>
@@ -649,9 +654,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk2single._single2spatial.Single2Spatial.train">
+<h3 class="doc doc-heading" id="omicverse.bulk2single._single2spatial.Single2Spatial.train">
 <code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">spot_num</span><span class="p">,</span> <span class="n">cell_num</span><span class="p">,</span> <span class="n">df_save_dir</span><span class="o">=</span><span class="s1">'save_model'</span><span class="p">,</span> <span class="n">df_save_name</span><span class="o">=</span><span class="s1">'df'</span><span class="p">,</span> <span class="n">max_cell_in_diff_spot_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">112</span><span class="p">,</span> <span class="n">mul_train</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">predicted_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.train" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk2single._single2spatial.Single2Spatial.train" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Train the model of single2spatial</p>
 <p><strong>Parameters:</strong></p>
@@ -774,7 +779,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk2single/_single2spatial.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk2single/_single2spatial.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 49 "></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">spot_num</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span>
 <span class="linenos" data-linenos=" 50 "></span>                <span class="n">cell_num</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span>
 <span class="linenos" data-linenos=" 51 "></span>                <span class="n">df_save_dir</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'save_model'</span><span class="p">,</span>
@@ -844,9 +849,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk2single._single2spatial.Single2Spatial.load">
+<h3 class="doc doc-heading" id="omicverse.bulk2single._single2spatial.Single2Spatial.load">
 <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">modelsize</span><span class="p">,</span> <span class="n">df_load_dir</span><span class="o">=</span><span class="s1">'save_model/df'</span><span class="p">,</span> <span class="n">max_cell_in_diff_spot_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">112</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">predicted_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.load" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk2single._single2spatial.Single2Spatial.load" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Load the model of single2spatial</p>
 <p><strong>Parameters:</strong></p>
@@ -946,7 +951,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk2single/_single2spatial.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk2single/_single2spatial.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="131 "></span><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">modelsize</span><span class="p">,</span>
 <span class="linenos" data-linenos="132 "></span>                <span class="n">df_load_dir</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'save_model/df'</span><span class="p">,</span>
 <span class="linenos" data-linenos="133 "></span>
@@ -1000,9 +1005,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk2single._single2spatial.Single2Spatial.save">
+<h3 class="doc doc-heading" id="omicverse.bulk2single._single2spatial.Single2Spatial.save">
 <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">df_save_dir</span><span class="o">=</span><span class="s1">'save_model'</span><span class="p">,</span> <span class="n">df_save_name</span><span class="o">=</span><span class="s1">'df'</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.save" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk2single._single2spatial.Single2Spatial.save" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Save the model of single2spatial</p>
 <p><strong>Parameters:</strong></p>
@@ -1039,7 +1044,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk2single/_single2spatial.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk2single/_single2spatial.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="114 "></span><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df_save_dir</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'save_model'</span><span class="p">,</span>
 <span class="linenos" data-linenos="115 "></span>            <span class="n">df_save_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'df'</span><span class="p">,):</span>
 <span class="linenos" data-linenos="116 "></span><span class="w">    </span><span class="sd">"""Save the model of single2spatial</span>
@@ -1059,9 +1064,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk2single._single2spatial.Single2Spatial.spot_assess">
+<h3 class="doc doc-heading" id="omicverse.bulk2single._single2spatial.Single2Spatial.spot_assess">
 <code class="highlight language-python"><span class="n">spot_assess</span><span class="p">()</span></code>
-<a class="headerlink" href="#Pyomic.bulk2single._single2spatial.Single2Spatial.spot_assess" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk2single._single2spatial.Single2Spatial.spot_assess" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Assess the predicted spatial data</p>
 <p><strong>Returns:</strong></p>
@@ -1082,7 +1087,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk2single/_single2spatial.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk2single/_single2spatial.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="180 "></span><span class="k">def</span> <span class="nf">spot_assess</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
 <span class="linenos" data-linenos="181 "></span><span class="w">    </span><span class="sd">"""Assess the predicted spatial data</span>
 <span class="linenos" data-linenos="182 "></span>

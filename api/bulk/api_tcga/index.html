@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#Pyomic.bulk.pyTCGA">
+<a class="md-skip" href="#omicverse.bulk.pyTCGA">
           Skip to content
         </a>
 </div>
@@ -148,6 +148,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk/t_deg/">
         Different Expression Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
       </a>
 </li>
 <li class="md-nav__item">
@@ -281,48 +286,48 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk.pyTCGA">
+<a class="md-nav__link" href="#omicverse.bulk.pyTCGA">
     pyTCGA
   </a>
 <nav aria-label="pyTCGA" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.__init__">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.__init__">
     __init__()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.adata_read">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.adata_read">
     adata_read()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.adata_meta_init">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.adata_meta_init">
     adata_meta_init()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.index_init">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.index_init">
     index_init()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.matrix_construct">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.matrix_construct">
     matrix_construct()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.matrix_normalize">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.matrix_normalize">
     matrix_normalize()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.survival_analysis">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.survival_analysis">
     survival_analysis()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._tcga.pyTCGA.survial_analysis_all">
+<a class="md-nav__link" href="#omicverse.bulk._tcga.pyTCGA.survial_analysis_all">
     survial_analysis_all()
   </a>
 </li>
@@ -338,15 +343,15 @@
 <article class="md-content__inner md-typeset">
 <h1>Api tcga</h1>
 <div class="doc doc-object doc-class">
-<h2 class="doc doc-heading" id="Pyomic.bulk.pyTCGA">
-<code>Pyomic.bulk.pyTCGA</code>
-<a class="headerlink" href="#Pyomic.bulk.pyTCGA" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.bulk.pyTCGA">
+<code>omicverse.bulk.pyTCGA</code>
+<a class="headerlink" href="#omicverse.bulk.pyTCGA" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p class="doc doc-class-bases">
         Bases: <code>object</code></p>
 <p>TCGA analysis module</p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 11 "></span><span class="k">class</span> <span class="nc">pyTCGA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="linenos" data-linenos=" 12 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos=" 13 "></span><span class="sd">    TCGA analysis module </span>
@@ -635,9 +640,9 @@
 </details>
 <div class="doc doc-children">
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.__init__">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.__init__">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gdc_sample_sheep</span><span class="p">,</span> <span class="n">gdc_download_files</span><span class="p">,</span> <span class="n">clinical_cart</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.__init__" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.__init__" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Init the TCGA module</p>
 <p><strong>Parameters:</strong></p>
@@ -684,7 +689,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="15 "></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gdc_sample_sheep</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span><span class="n">gdc_download_files</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span><span class="n">clinical_cart</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
 <span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="17 "></span><span class="sd">    Init the TCGA module</span>
@@ -719,9 +724,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.adata_read">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.adata_read">
 <code class="highlight language-python"><span class="n">adata_read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.adata_read" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.adata_read" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Read the anndata file</p>
 <p><strong>Parameters:</strong></p>
@@ -748,7 +753,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="46 "></span><span class="k">def</span> <span class="nf">adata_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">path</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
 <span class="linenos" data-linenos="47 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="48 "></span><span class="sd">    Read the anndata file</span>
@@ -763,9 +768,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.adata_meta_init">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.adata_meta_init">
 <code class="highlight language-python"><span class="n">adata_meta_init</span><span class="p">(</span><span class="n">var_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'gene_name'</span><span class="p">,</span> <span class="s1">'gene_type'</span><span class="p">],</span> <span class="n">obs_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'Case ID'</span><span class="p">,</span> <span class="s1">'Sample Type'</span><span class="p">])</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.adata_meta_init" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.adata_meta_init" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Init the anndata meta data</p>
 <p><strong>Parameters:</strong></p>
@@ -819,7 +824,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="61 "></span><span class="k">def</span> <span class="nf">adata_meta_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">var_names</span><span class="p">:</span><span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="s1">'gene_name'</span><span class="p">,</span><span class="s1">'gene_type'</span><span class="p">],</span>
 <span class="linenos" data-linenos="62 "></span>              <span class="n">obs_names</span><span class="p">:</span><span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="s1">'Case ID'</span><span class="p">,</span><span class="s1">'Sample Type'</span><span class="p">])</span><span class="o">-&gt;</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
 <span class="linenos" data-linenos="63 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
@@ -855,9 +860,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.index_init">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.index_init">
 <code class="highlight language-python"><span class="n">index_init</span><span class="p">()</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.index_init" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.index_init" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Init the index of the anndata object</p>
 <p><strong>Returns:</strong></p>
@@ -878,7 +883,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="129 "></span><span class="k">def</span> <span class="nf">index_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">:</span>
 <span class="linenos" data-linenos="130 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="131 "></span><span class="sd">    Init the index of the anndata object</span>
@@ -905,13 +910,13 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.matrix_construct">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.matrix_construct">
 <code class="highlight language-python"><span class="n">matrix_construct</span><span class="p">()</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.matrix_construct" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.matrix_construct" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Construct the anndata object</p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="188 "></span><span class="k">def</span> <span class="nf">matrix_construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos" data-linenos="189 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="190 "></span><span class="sd">    Construct the anndata object</span>
@@ -930,9 +935,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.matrix_normalize">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.matrix_normalize">
 <code class="highlight language-python"><span class="n">matrix_normalize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.matrix_normalize" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.matrix_normalize" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>normalize the matrix by Deseq2 methods</p>
 <p><strong>Parameters:</strong></p>
@@ -976,7 +981,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="202 "></span><span class="k">def</span> <span class="nf">matrix_normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="linenos" data-linenos="203 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="204 "></span><span class="sd">    normalize the matrix by Deseq2 methods</span>
@@ -997,9 +1002,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.survival_analysis">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.survival_analysis">
 <code class="highlight language-python"><span class="n">survival_analysis</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">'raw'</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">gene_threshold</span><span class="o">=</span><span class="s1">'median'</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.survival_analysis" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.survival_analysis" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Analysis the survival of the gene</p>
 <p><strong>Parameters:</strong></p>
@@ -1079,7 +1084,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="220 "></span><span class="k">def</span> <span class="nf">survival_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span><span class="n">layer</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'raw'</span><span class="p">,</span><span class="n">plot</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">gene_threshold</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'median'</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span><span class="nb">float</span><span class="p">]:</span>
 <span class="linenos" data-linenos="221 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="222 "></span><span class="sd">    Analysis the survival of the gene</span>
@@ -1148,13 +1153,13 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._tcga.pyTCGA.survial_analysis_all">
+<h3 class="doc doc-heading" id="omicverse.bulk._tcga.pyTCGA.survial_analysis_all">
 <code class="highlight language-python"><span class="n">survial_analysis_all</span><span class="p">()</span></code>
-<a class="headerlink" href="#Pyomic.bulk._tcga.pyTCGA.survial_analysis_all" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._tcga.pyTCGA.survial_analysis_all" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>analysis the survival of all the genes</p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_tcga.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_tcga.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="284 "></span><span class="k">def</span> <span class="nf">survial_analysis_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos" data-linenos="285 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="linenos" data-linenos="286 "></span><span class="sd">    analysis the survival of all the genes</span>

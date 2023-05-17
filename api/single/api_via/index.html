@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#Pyomic.single.pyVIA">
+<a class="md-skip" href="#omicverse.single.pyVIA">
           Skip to content
         </a>
 </div>
@@ -148,6 +148,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk/t_deg/">
         Different Expression Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
       </a>
 </li>
 <li class="md-nav__item">
@@ -281,63 +286,63 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single.pyVIA">
+<a class="md-nav__link" href="#omicverse.single.pyVIA">
     pyVIA
   </a>
 <nav aria-label="pyVIA" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.__init__">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.__init__">
     __init__()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.run">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.run">
     run()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.get_piechart_dict">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.get_piechart_dict">
     get_piechart_dict()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.get_pseudotime">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.get_pseudotime">
     get_pseudotime()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_piechart_graph">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_piechart_graph">
     plot_piechart_graph()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_stream">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_stream">
     plot_stream()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_trajectory_gams">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_trajectory_gams">
     plot_trajectory_gams()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_lineage_probability">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_lineage_probability">
     plot_lineage_probability()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_gene_trend">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_gene_trend">
     plot_gene_trend()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_gene_trend_heatmap">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_gene_trend_heatmap">
     plot_gene_trend_heatmap()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.single._via.pyVIA.plot_clustergraph">
+<a class="md-nav__link" href="#omicverse.single._via.pyVIA.plot_clustergraph">
     plot_clustergraph()
   </a>
 </li>
@@ -353,14 +358,14 @@
 <article class="md-content__inner md-typeset">
 <h1>Api via</h1>
 <div class="doc doc-object doc-class">
-<h2 class="doc doc-heading" id="Pyomic.single.pyVIA">
-<code>Pyomic.single.pyVIA</code>
-<a class="headerlink" href="#Pyomic.single.pyVIA" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.single.pyVIA">
+<code>omicverse.single.pyVIA</code>
+<a class="headerlink" href="#omicverse.single.pyVIA" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p class="doc doc-class-bases">
         Bases: <code>object</code></p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 21 "></span><span class="k">class</span> <span class="nc">pyVIA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="linenos" data-linenos=" 22 "></span>
 <span class="linenos" data-linenos=" 23 "></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">adata</span><span class="p">:</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span><span class="n">adata_key</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'X_pca'</span><span class="p">,</span><span class="n">adata_ncomps</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">basis</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'X_umap'</span><span class="p">,</span>
@@ -803,9 +808,9 @@
 </details>
 <div class="doc doc-children">
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.__init__">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.__init__">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">adata_key</span><span class="o">=</span><span class="s1">'X_pca'</span><span class="p">,</span> <span class="n">adata_ncomps</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">'X_umap'</span><span class="p">,</span> <span class="n">clusters</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">dist_std_local</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">jac_std_global</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keep_all_local_dist</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">,</span> <span class="n">too_big_factor</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">resolution_parameter</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">partition_type</span><span class="o">=</span><span class="s1">'ModularityVP'</span><span class="p">,</span> <span class="n">small_pop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">jac_weighted_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">knn</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">n_iter_leiden</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="s1">'l2'</span><span class="p">,</span> <span class="n">time_smallpop</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">super_cluster_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">super_node_degree_list</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">super_terminal_cells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">x_lazy</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">alpha_teleport</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">root_user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preserve_disconnected</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">super_terminal_clusters</span><span class="o">=</span><span class="p">[],</span> <span class="n">is_coarse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">csr_full_graph</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">csr_array_locally_pruned</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">ig_full_graph</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">full_neighbor_array</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">full_distance_array</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">df_annot</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preserve_disconnected_after_pruning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">secondary_annotations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pseudotime_threshold_TS</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">cluster_graph_pruning_std</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">visual_cluster_graph_pruning</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">neighboring_terminal_states_threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_mcmc_simulations</span><span class="o">=</span><span class="mi">1300</span><span class="p">,</span> <span class="n">piegraph_arrow_head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">piegraph_edgeweight_scalingfactor</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">max_visual_outgoing_edges</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">via_coarse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">velocity_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gene_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">velo_weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edgebundle_pruning</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">A_velo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">CSM</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edgebundle_pruning_twice</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pca_loadings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">time_series</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">time_series_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">knn_sequential</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">knn_sequential_reverse</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_diff_step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">single_cell_transition_matrix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">embedding_type</span><span class="o">=</span><span class="s1">'via-mds'</span><span class="p">,</span> <span class="n">do_compute_embedding</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_defined_terminal_cell</span><span class="o">=</span><span class="p">[],</span> <span class="n">user_defined_terminal_group</span><span class="o">=</span><span class="p">[],</span> <span class="n">do_gaussian_kernel_edgeweights</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">RW2_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">working_dir_fp</span><span class="o">=</span><span class="s1">'/home/shobi/Trajectory/Datasets/'</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.__init__" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.__init__" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Initialize a pyVIA object.</p>
 <p><strong>Parameters:</strong></p>
@@ -891,7 +896,7 @@
 <tr>
 <td><code>labels</code></td>
 <td>
-<code><span title="Pyomic.via.plotting_via.np">np</span>.<span title="Pyomic.via.plotting_via.np.ndarray">ndarray</span></code>
+<code><span title="omicverse.via.plotting_via.np">np</span>.<span title="omicverse.via.plotting_via.np.ndarray">ndarray</span></code>
 </td>
 <td><p>default is None. and PARC clusters are used for the viagraph. alternatively provide a list of clustermemberships that are integer values (not strings) to construct the viagraph using another clustering method or available annotations</p></td>
 <td>
@@ -1388,7 +1393,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 23 "></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">adata</span><span class="p">:</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span><span class="n">adata_key</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'X_pca'</span><span class="p">,</span><span class="n">adata_ncomps</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">basis</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'X_umap'</span><span class="p">,</span>
 <span class="linenos" data-linenos=" 24 "></span>             <span class="n">clusters</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">dist_std_local</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">jac_std_global</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="linenos" data-linenos=" 25 "></span>             <span class="n">keep_all_local_dist</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">,</span> <span class="n">too_big_factor</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">resolution_parameter</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">partition_type</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s2">"ModularityVP"</span><span class="p">,</span> <span class="n">small_pop</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
@@ -1509,13 +1514,13 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.run">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.run">
 <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.run" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.run" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>calculate the via graph and pseudotime</p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="138 "></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos" data-linenos="139 "></span><span class="w">    </span><span class="sd">"""calculate the via graph and pseudotime</span>
 <span class="linenos" data-linenos="140 "></span>
@@ -1526,9 +1531,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.get_piechart_dict">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.get_piechart_dict">
 <code class="highlight language-python"><span class="n">get_piechart_dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">clusters</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.get_piechart_dict" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.get_piechart_dict" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Cluster composition graph</p>
 <p><strong>Parameters:</strong></p>
@@ -1582,7 +1587,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="144 "></span><span class="k">def</span> <span class="nf">get_piechart_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">label</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">clusters</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">dict</span><span class="p">:</span>
 <span class="linenos" data-linenos="145 "></span><span class="w">    </span><span class="sd">"""</span>
 <span class="linenos" data-linenos="146 "></span><span class="sd">    Cluster composition graph</span>
@@ -1605,9 +1610,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.get_pseudotime">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.get_pseudotime">
 <code class="highlight language-python"><span class="n">get_pseudotime</span><span class="p">(</span><span class="n">adata</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.get_pseudotime" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.get_pseudotime" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Extract the pseudotime of VIA</p>
 <p><strong>Parameters:</strong></p>
@@ -1633,7 +1638,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="162 "></span><span class="k">def</span> <span class="nf">get_pseudotime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">adata</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="linenos" data-linenos="163 "></span><span class="w">    </span><span class="sd">"""</span>
 <span class="linenos" data-linenos="164 "></span><span class="sd">    Extract the pseudotime of VIA</span>
@@ -1653,9 +1658,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_piechart_graph">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_piechart_graph">
 <code class="highlight language-python"><span class="n">plot_piechart_graph</span><span class="p">(</span><span class="n">clusters</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">type_data</span><span class="o">=</span><span class="s1">'pt'</span><span class="p">,</span> <span class="n">gene_exp</span><span class="o">=</span><span class="p">[],</span> <span class="n">title</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax_text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">headwidth_arrow</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">alpha_edge</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth_edge</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">'darkblue'</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pie_size_scale</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_piechart_graph" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_piechart_graph" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>plot two subplots with a clustergraph level representation of the viagraph showing true-label composition (lhs) and pseudotime/gene expression (rhs)</p>
 <p><strong>Parameters:</strong></p>
@@ -1790,26 +1795,26 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>Returns matplotlib figure with two axes that plot the clustergraph using edge bundling</p></td>
 </tr>
 <tr>
 <td><code>ax</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>left axis shows the clustergraph with each node colored by annotated ground truth membership.</p></td>
 </tr>
 <tr>
 <td><code>ax1</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>right axis shows the same clustergraph with each node colored by the pseudotime or gene expression</p></td>
 </tr>
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="177 "></span><span class="k">def</span> <span class="nf">plot_piechart_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">clusters</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">type_data</span><span class="o">=</span><span class="s1">'pt'</span><span class="p">,</span>
 <span class="linenos" data-linenos="178 "></span>                            <span class="n">gene_exp</span><span class="p">:</span><span class="nb">list</span><span class="o">=</span><span class="p">[],</span> <span class="n">title</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> 
 <span class="linenos" data-linenos="179 "></span>                            <span class="n">cmap</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax_text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="p">:</span><span class="nb">tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
@@ -1859,9 +1864,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_stream">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_stream">
 <code class="highlight language-python"><span class="n">plot_stream</span><span class="p">(</span><span class="n">clusters</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">density_grid</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">arrow_size</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">arrow_color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">arrow_style</span><span class="o">=</span><span class="s1">'-|&gt;'</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_mass</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cutoff_perc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scatter_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">scatter_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">marker_edgewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">density_stream</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">smooth_transition</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">smooth_grid</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color_scheme</span><span class="o">=</span><span class="s1">'annotation'</span><span class="p">,</span> <span class="n">add_outline_clusters</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cluster_outline_edgewidth</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">gp_color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Streamplot'</span><span class="p">,</span> <span class="n">b_bias</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_neighbors_velocity_grid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">other_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_sequentially_augmented</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap_str</span><span class="o">=</span><span class="s1">'rainbow'</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_stream" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_stream" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Construct vector streamplot on the embedding to show a fine-grained view of inferred directions in the trajectory</p>
 <p><strong>Parameters:</strong></p>
@@ -2140,20 +2145,20 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>matplotlib figure</p></td>
 </tr>
 <tr>
 <td><code>ax</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>matplotlib axis</p></td>
 </tr>
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="222 "></span><span class="k">def</span> <span class="nf">plot_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">clusters</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">basis</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>
 <span class="linenos" data-linenos="223 "></span>               <span class="n">density_grid</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">arrow_size</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">arrow_color</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s1">'k'</span><span class="p">,</span>
 <span class="linenos" data-linenos="224 "></span>               <span class="n">arrow_style</span><span class="o">=</span><span class="s2">"-|&gt;"</span><span class="p">,</span>  <span class="n">max_length</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">linewidth</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">min_mass</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cutoff_perc</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
@@ -2223,9 +2228,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_trajectory_gams">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_trajectory_gams">
 <code class="highlight language-python"><span class="n">plot_trajectory_gams</span><span class="p">(</span><span class="n">clusters</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">via_fine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title_str</span><span class="o">=</span><span class="s1">'Pseudotime'</span><span class="p">,</span> <span class="n">draw_all_curves</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">arrow_width_scale_factor</span><span class="o">=</span><span class="mf">15.0</span><span class="p">,</span> <span class="n">scatter_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">scatter_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">marker_edgewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap_pseudotime</span><span class="o">=</span><span class="s1">'viridis_r'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">highlight_terminal_states</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_maxout_edgelist</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_trajectory_gams" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_trajectory_gams" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>projects the graph based coarse trajectory onto a umap/tsne embedding</p>
 <p><strong>Parameters:</strong></p>
@@ -2378,26 +2383,26 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>matplotlib figure</p></td>
 </tr>
 <tr>
 <td><code>ax1</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>matplotlib axis</p></td>
 </tr>
 <tr>
 <td><code>ax2</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>matplotlib axis</p></td>
 </tr>
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="287 "></span><span class="k">def</span> <span class="nf">plot_trajectory_gams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">clusters</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">basis</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">via_fine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="linenos" data-linenos="288 "></span>                     <span class="n">title_str</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span> <span class="s2">"Pseudotime"</span><span class="p">,</span> <span class="n">draw_all_curves</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">arrow_width_scale_factor</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">15.0</span><span class="p">,</span>
 <span class="linenos" data-linenos="289 "></span>                     <span class="n">scatter_size</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">scatter_alpha</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">figsize</span><span class="p">:</span><span class="nb">tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
@@ -2449,9 +2454,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_lineage_probability">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_lineage_probability">
 <code class="highlight language-python"><span class="n">plot_lineage_probability</span><span class="p">(</span><span class="n">clusters</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">via_fine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'plasma'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">scatter_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker_lineages</span><span class="o">=</span><span class="p">[],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_lineage_probability" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_lineage_probability" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>G is the igraph knn (low K) used for shortest path in high dim space. no idx needed as it's made on full sample, knn_hnsw is the knn made in the embedded space used for query to find the nearest point in the downsampled embedding that corresponds to the single cells in the full graph</p>
 <p><strong>Parameters:</strong></p>
@@ -2568,20 +2573,20 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>matplotlib figure</p></td>
 </tr>
 <tr>
 <td><code>axs</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>matplotlib axis</p></td>
 </tr>
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="334 "></span><span class="k">def</span> <span class="nf">plot_lineage_probability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">clusters</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">basis</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span><span class="n">via_fine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
 <span class="linenos" data-linenos="335 "></span>                            <span class="n">idx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="p">:</span><span class="nb">tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
 <span class="linenos" data-linenos="336 "></span>                            <span class="n">cmap</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'plasma'</span><span class="p">,</span> <span class="n">dpi</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">scatter_size</span> <span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -2623,9 +2628,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_gene_trend">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_gene_trend">
 <code class="highlight language-python"><span class="n">plot_gene_trend</span><span class="p">(</span><span class="n">gene_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">magic_steps</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">spline_order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'jet'</span><span class="p">,</span> <span class="n">marker_genes</span><span class="o">=</span><span class="p">[],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">n_splines</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontsize_</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">marker_lineages</span><span class="o">=</span><span class="p">[])</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_gene_trend" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_gene_trend" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>plots the gene expression trend along the pseudotime</p>
 <p><strong>Parameters:</strong></p>
@@ -2751,20 +2756,20 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>matplotlib figure</p></td>
 </tr>
 <tr>
 <td><code>axs</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>matplotlib axis</p></td>
 </tr>
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="371 "></span><span class="k">def</span> <span class="nf">plot_gene_trend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene_list</span><span class="p">:</span><span class="nb">list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">figsize</span><span class="p">:</span><span class="nb">tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
 <span class="linenos" data-linenos="372 "></span>                    <span class="n">magic_steps</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">spline_order</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">dpi</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">cmap</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'jet'</span><span class="p">,</span> 
 <span class="linenos" data-linenos="373 "></span>                    <span class="n">marker_genes</span><span class="p">:</span><span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">linewidth</span><span class="p">:</span><span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
@@ -2802,9 +2807,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_gene_trend_heatmap">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_gene_trend_heatmap">
 <code class="highlight language-python"><span class="n">plot_gene_trend_heatmap</span><span class="p">(</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">marker_lineages</span><span class="o">=</span><span class="p">[],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'viridis'</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ytick_labelrotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_gene_trend_heatmap" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_gene_trend_heatmap" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Plot the gene trends on heatmap: a heatmap is generated for each lineage (identified by terminal cluster number). Default selects all lineages</p>
 <p><strong>Parameters:</strong></p>
@@ -2894,7 +2899,7 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>matplotlib figure</p></td>
 </tr>
@@ -2907,7 +2912,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="430 "></span><span class="k">def</span> <span class="nf">plot_gene_trend_heatmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene_list</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">marker_lineages</span><span class="p">:</span><span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span> 
 <span class="linenos" data-linenos="431 "></span>                         <span class="n">fontsize</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">cmap</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'viridis'</span><span class="p">,</span> <span class="n">normalize</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ytick_labelrotation</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
 <span class="linenos" data-linenos="432 "></span>                         <span class="n">figsize</span><span class="p">:</span><span class="nb">tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
@@ -2942,9 +2947,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.single._via.pyVIA.plot_clustergraph">
+<h3 class="doc doc-heading" id="omicverse.single._via.pyVIA.plot_clustergraph">
 <code class="highlight language-python"><span class="n">plot_clustergraph</span><span class="p">(</span><span class="n">gene_list</span><span class="p">,</span> <span class="n">arrow_head</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">magic_steps</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">edgeweight_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label_</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.single._via.pyVIA.plot_clustergraph" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.single._via.pyVIA.plot_clustergraph" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>plot the gene in pie chart for each cluster</p>
 <p><strong>Parameters:</strong></p>
@@ -3025,20 +3030,20 @@
 <tbody>
 <tr>
 <td><code>fig</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.figure">figure</span>.<span title="matplotlib.figure.Figure">Figure</span></code>
 </td>
 <td><p>matplotlib figure</p></td>
 </tr>
 <tr>
 <td><code>axs</code></td> <td>
-<code><span title="Pyomic.via.plotting_via.matplotlib">matplotlib</span>.<span title="Pyomic.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
+<code><span title="omicverse.via.plotting_via.matplotlib">matplotlib</span>.<span title="omicverse.via.plotting_via.matplotlib.axes">axes</span>.<span title="matplotlib.axes._axes">_axes</span>.<span title="matplotlib.axes._axes.Axes">Axes</span></code>
 </td>
 <td><p>matplotlib axis</p></td>
 </tr>
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/single/_via.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/single/_via.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="404 "></span><span class="k">def</span> <span class="nf">plot_clustergraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene_list</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">arrow_head</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">figsize</span><span class="p">:</span><span class="nb">tuple</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">magic_steps</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
 <span class="linenos" data-linenos="405 "></span>                      <span class="n">edgeweight_scale</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label_</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span><span class="o">-&gt;</span><span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
 <span class="linenos" data-linenos="406 "></span>                                                                                    <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>

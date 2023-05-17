@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#Pyomic.bulk.pyPPI">
+<a class="md-skip" href="#omicverse.bulk.pyPPI">
           Skip to content
         </a>
 </div>
@@ -148,6 +148,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk/t_deg/">
         Different Expression Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk/t_deseq2/">
+        Different Expression Analysis with DEseq2
       </a>
 </li>
 <li class="md-nav__item">
@@ -281,23 +286,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk.pyPPI">
+<a class="md-nav__link" href="#omicverse.bulk.pyPPI">
     pyPPI
   </a>
 <nav aria-label="pyPPI" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._network.pyPPI.__init__">
+<a class="md-nav__link" href="#omicverse.bulk._network.pyPPI.__init__">
     __init__()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._network.pyPPI.interaction_analysis">
+<a class="md-nav__link" href="#omicverse.bulk._network.pyPPI.interaction_analysis">
     interaction_analysis()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk._network.pyPPI.plot_network">
+<a class="md-nav__link" href="#omicverse.bulk._network.pyPPI.plot_network">
     plot_network()
   </a>
 </li>
@@ -305,17 +310,17 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk.string_interaction">
+<a class="md-nav__link" href="#omicverse.bulk.string_interaction">
     string_interaction()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk.string_map">
+<a class="md-nav__link" href="#omicverse.bulk.string_map">
     string_map()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#Pyomic.bulk.generate_G">
+<a class="md-nav__link" href="#omicverse.bulk.generate_G">
     generate_G()
   </a>
 </li>
@@ -328,14 +333,14 @@
 <article class="md-content__inner md-typeset">
 <h1>Api network</h1>
 <div class="doc doc-object doc-class">
-<h2 class="doc doc-heading" id="Pyomic.bulk.pyPPI">
-<code>Pyomic.bulk.pyPPI</code>
-<a class="headerlink" href="#Pyomic.bulk.pyPPI" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.bulk.pyPPI">
+<code>omicverse.bulk.pyPPI</code>
+<a class="headerlink" href="#omicverse.bulk.pyPPI" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p class="doc doc-class-bases">
         Bases: <code>object</code></p>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="155 "></span><span class="k">class</span> <span class="nc">pyPPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="linenos" data-linenos="156 "></span>
 <span class="linenos" data-linenos="157 "></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">gene_type_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span><span class="n">gene_color_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
@@ -379,9 +384,9 @@
 </details>
 <div class="doc doc-children">
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._network.pyPPI.__init__">
+<h3 class="doc doc-heading" id="omicverse.bulk._network.pyPPI.__init__">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">gene_type_dict</span><span class="p">,</span> <span class="n">gene_color_dict</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk._network.pyPPI.__init__" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._network.pyPPI.__init__" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Initialize the protein-protein interaction analysis.</p>
 <p><strong>Parameters:</strong></p>
@@ -448,7 +453,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="157 "></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">gene_type_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span><span class="n">gene_color_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
 <span class="linenos" data-linenos="158 "></span>             <span class="n">score</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="linenos" data-linenos="159 "></span><span class="w">    </span><span class="sd">"""Initialize the protein-protein interaction analysis.</span>
@@ -470,9 +475,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._network.pyPPI.interaction_analysis">
+<h3 class="doc doc-heading" id="omicverse.bulk._network.pyPPI.interaction_analysis">
 <code class="highlight language-python"><span class="n">interaction_analysis</span><span class="p">()</span></code>
-<a class="headerlink" href="#Pyomic.bulk._network.pyPPI.interaction_analysis" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._network.pyPPI.interaction_analysis" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Analysis the protein-protein interaction.</p>
 <p><strong>Returns:</strong></p>
@@ -493,7 +498,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="174 "></span><span class="k">def</span> <span class="nf">interaction_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
 <span class="linenos" data-linenos="175 "></span><span class="w">    </span><span class="sd">"""Analysis the protein-protein interaction.</span>
 <span class="linenos" data-linenos="176 "></span>
@@ -510,9 +515,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="Pyomic.bulk._network.pyPPI.plot_network">
+<h3 class="doc doc-heading" id="omicverse.bulk._network.pyPPI.plot_network">
 <code class="highlight language-python"><span class="n">plot_network</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk._network.pyPPI.plot_network" title="Permanent link">¶</a></h3>
+<a class="headerlink" href="#omicverse.bulk._network.pyPPI.plot_network" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Plot the protein-protein interaction network.</p>
 <p><strong>Returns:</strong></p>
@@ -539,7 +544,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="186 "></span><span class="k">def</span> <span class="nf">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
 <span class="linenos" data-linenos="187 "></span><span class="w">    </span><span class="sd">"""Plot the protein-protein interaction network.</span>
 <span class="linenos" data-linenos="188 "></span>
@@ -556,9 +561,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h2 class="doc doc-heading" id="Pyomic.bulk.string_interaction">
-<code class="highlight language-python"><span class="n">Pyomic</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">string_interaction</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk.string_interaction" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.bulk.string_interaction">
+<code class="highlight language-python"><span class="n">omicverse</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">string_interaction</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">)</span></code>
+<a class="headerlink" href="#omicverse.bulk.string_interaction" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p>A Python library to analysis the protein-protein interaction network by string-db</p>
 <p><strong>Parameters:</strong></p>
@@ -612,7 +617,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="10 "></span><span class="k">def</span> <span class="nf">string_interaction</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to analysis the protein-protein interaction network by string-db</span>
 <span class="linenos" data-linenos="12 "></span>
@@ -675,9 +680,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h2 class="doc doc-heading" id="Pyomic.bulk.string_map">
-<code class="highlight language-python"><span class="n">Pyomic</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">string_map</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk.string_map" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.bulk.string_map">
+<code class="highlight language-python"><span class="n">omicverse</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">string_map</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">)</span></code>
+<a class="headerlink" href="#omicverse.bulk.string_map" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p>A Python library to find the gene name in string-db</p>
 <p><strong>Parameters:</strong></p>
@@ -731,7 +736,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 70 "></span><span class="k">def</span> <span class="nf">string_map</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="linenos" data-linenos=" 71 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to find the gene name in string-db</span>
 <span class="linenos" data-linenos=" 72 "></span>
@@ -776,9 +781,9 @@
 </div>
 </div>
 <div class="doc doc-object doc-function">
-<h2 class="doc doc-heading" id="Pyomic.bulk.generate_G">
-<code class="highlight language-python"><span class="n">Pyomic</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">generate_G</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span></code>
-<a class="headerlink" href="#Pyomic.bulk.generate_G" title="Permanent link">¶</a></h2>
+<h2 class="doc doc-heading" id="omicverse.bulk.generate_G">
+<code class="highlight language-python"><span class="n">omicverse</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">generate_G</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span></code>
+<a class="headerlink" href="#omicverse.bulk.generate_G" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <p>A Python library to get the PPI network in string-db</p>
 <p><strong>Parameters:</strong></p>
@@ -842,7 +847,7 @@
 </tbody>
 </table>
 <details class="quote">
-<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/Pyomic/bulk/_network.py</code></summary>
+<summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="128 "></span><span class="k">def</span> <span class="nf">generate_G</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">score</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
 <span class="linenos" data-linenos="129 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to get the PPI network in string-db</span>
 <span class="linenos" data-linenos="130 "></span>
