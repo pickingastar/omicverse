@@ -146,6 +146,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk/t_bulk_combat/">
+        Batch correction in Bulk RNA-seq or microarray data
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk/t_deg/">
         Different Expression Analysis
       </a>
@@ -186,8 +191,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-single/t_preprocess/">
+        Preprocessing the data of scRNA-seq with omicverse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-single/t_single_batch/">
+        Data integration and batch correction
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-single/t_cellanno/">
-        Celltype annotation with SCSA
+        Celltype auto annotation with SCSA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-single/t_metatime/">
+        Celltype auto annotation with MetaTiME
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-single/t_tosica/">
+        Celltype annotation migration(mapping) with TOSICA
       </a>
 </li>
 <li class="md-nav__item">
@@ -203,6 +228,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-single/t_aucell/">
         Pathway analysis with AUCell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-single/t_scdeg/">
+        Differential expression analysis in single cell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-single/t_simba/">
+        Data integration and batch correction with SIMBA
       </a>
 </li>
 <li class="md-nav__item">
@@ -225,11 +260,6 @@
         Multi omics analysis by MOFA and GLUE
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../Tutorials-single/t_nocd/">
-        Overlapping Celltype annotation with GNN
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -245,6 +275,11 @@
           Bulk2Single
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Tutorials-bulk2single/t_bulktrajblend/">
+        Bulk RNA-seq generate 'interrupted' cells to interpolate scRNA-seq
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../Tutorials-bulk2single/t_bulk2single/">
         Bulk RNA-seq to Single RNA-seq
@@ -346,45 +381,45 @@
         Bases: <code>object</code></p>
 <details class="quote">
 <summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="155 "></span><span class="k">class</span> <span class="nc">pyPPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<span class="linenos" data-linenos="156 "></span>
-<span class="linenos" data-linenos="157 "></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">gene_type_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span><span class="n">gene_color_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-<span class="linenos" data-linenos="158 "></span>                 <span class="n">score</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos" data-linenos="159 "></span><span class="w">        </span><span class="sd">"""Initialize the protein-protein interaction analysis.</span>
-<span class="linenos" data-linenos="160 "></span>
-<span class="linenos" data-linenos="161 "></span><span class="sd">        Arguments:</span>
-<span class="linenos" data-linenos="162 "></span><span class="sd">            gene: The gene list to analysis PPI</span>
-<span class="linenos" data-linenos="163 "></span><span class="sd">            species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
-<span class="linenos" data-linenos="164 "></span><span class="sd">            gene_type_dict: The gene type dict, the key is gene name, the value is gene type.</span>
-<span class="linenos" data-linenos="165 "></span><span class="sd">            gene_color_dict: The gene color dict, the key is gene name, the value is gene color.</span>
-<span class="linenos" data-linenos="166 "></span><span class="sd">            score: The threshold of protein A and B interaction</span>
-<span class="linenos" data-linenos="167 "></span><span class="sd">        """</span>
-<span class="linenos" data-linenos="168 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="o">=</span><span class="n">gene</span> 
-<span class="linenos" data-linenos="169 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="o">=</span><span class="n">species</span>
-<span class="linenos" data-linenos="170 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">=</span><span class="n">score</span>
-<span class="linenos" data-linenos="171 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="o">=</span><span class="n">gene_type_dict</span>
-<span class="linenos" data-linenos="172 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="o">=</span><span class="n">gene_color_dict</span>
-<span class="linenos" data-linenos="173 "></span>
-<span class="linenos" data-linenos="174 "></span>    <span class="k">def</span> <span class="nf">interaction_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
-<span class="linenos" data-linenos="175 "></span><span class="w">        </span><span class="sd">"""Analysis the protein-protein interaction.</span>
-<span class="linenos" data-linenos="176 "></span>
-<span class="linenos" data-linenos="177 "></span><span class="sd">        Returns:</span>
-<span class="linenos" data-linenos="178 "></span><span class="sd">            G: the networkx object of PPI in query gene list</span>
-<span class="linenos" data-linenos="179 "></span><span class="sd">        """</span>
-<span class="linenos" data-linenos="180 "></span>        <span class="n">G</span><span class="o">=</span><span class="n">generate_G</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="p">,</span>
-<span class="linenos" data-linenos="181 "></span>                          <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span>
-<span class="linenos" data-linenos="182 "></span>                          <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
-<span class="linenos" data-linenos="183 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">=</span><span class="n">G</span> 
-<span class="linenos" data-linenos="184 "></span>        <span class="k">return</span> <span class="n">G</span>
-<span class="linenos" data-linenos="185 "></span>
-<span class="linenos" data-linenos="186 "></span>    <span class="k">def</span> <span class="nf">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
-<span class="linenos" data-linenos="187 "></span><span class="w">        </span><span class="sd">"""Plot the protein-protein interaction network.</span>
-<span class="linenos" data-linenos="188 "></span>
-<span class="linenos" data-linenos="189 "></span><span class="sd">        Returns:</span>
-<span class="linenos" data-linenos="190 "></span><span class="sd">            fig: the figure of PPI network</span>
-<span class="linenos" data-linenos="191 "></span><span class="sd">            ax: the AxesSubplot of PPI network</span>
-<span class="linenos" data-linenos="192 "></span><span class="sd">        """</span>
-<span class="linenos" data-linenos="193 "></span>        <span class="k">return</span> <span class="n">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="136 "></span><span class="k">class</span> <span class="nc">pyPPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="linenos" data-linenos="137 "></span>
+<span class="linenos" data-linenos="138 "></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">gene_type_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span><span class="n">gene_color_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<span class="linenos" data-linenos="139 "></span>                 <span class="n">score</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos" data-linenos="140 "></span><span class="w">        </span><span class="sd">"""Initialize the protein-protein interaction analysis.</span>
+<span class="linenos" data-linenos="141 "></span>
+<span class="linenos" data-linenos="142 "></span><span class="sd">        Arguments:</span>
+<span class="linenos" data-linenos="143 "></span><span class="sd">            gene: The gene list to analysis PPI</span>
+<span class="linenos" data-linenos="144 "></span><span class="sd">            species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
+<span class="linenos" data-linenos="145 "></span><span class="sd">            gene_type_dict: The gene type dict, the key is gene name, the value is gene type.</span>
+<span class="linenos" data-linenos="146 "></span><span class="sd">            gene_color_dict: The gene color dict, the key is gene name, the value is gene color.</span>
+<span class="linenos" data-linenos="147 "></span><span class="sd">            score: The threshold of protein A and B interaction</span>
+<span class="linenos" data-linenos="148 "></span><span class="sd">        """</span>
+<span class="linenos" data-linenos="149 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="o">=</span><span class="n">gene</span> 
+<span class="linenos" data-linenos="150 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="o">=</span><span class="n">species</span>
+<span class="linenos" data-linenos="151 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">=</span><span class="n">score</span>
+<span class="linenos" data-linenos="152 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="o">=</span><span class="n">gene_type_dict</span>
+<span class="linenos" data-linenos="153 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="o">=</span><span class="n">gene_color_dict</span>
+<span class="linenos" data-linenos="154 "></span>
+<span class="linenos" data-linenos="155 "></span>    <span class="k">def</span> <span class="nf">interaction_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
+<span class="linenos" data-linenos="156 "></span><span class="w">        </span><span class="sd">"""Analysis the protein-protein interaction.</span>
+<span class="linenos" data-linenos="157 "></span>
+<span class="linenos" data-linenos="158 "></span><span class="sd">        Returns:</span>
+<span class="linenos" data-linenos="159 "></span><span class="sd">            G: the networkx object of PPI in query gene list</span>
+<span class="linenos" data-linenos="160 "></span><span class="sd">        """</span>
+<span class="linenos" data-linenos="161 "></span>        <span class="n">G</span><span class="o">=</span><span class="n">generate_G</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="p">,</span>
+<span class="linenos" data-linenos="162 "></span>                          <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span>
+<span class="linenos" data-linenos="163 "></span>                          <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
+<span class="linenos" data-linenos="164 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">=</span><span class="n">G</span> 
+<span class="linenos" data-linenos="165 "></span>        <span class="k">return</span> <span class="n">G</span>
+<span class="linenos" data-linenos="166 "></span>
+<span class="linenos" data-linenos="167 "></span>    <span class="k">def</span> <span class="nf">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
+<span class="linenos" data-linenos="168 "></span><span class="w">        </span><span class="sd">"""Plot the protein-protein interaction network.</span>
+<span class="linenos" data-linenos="169 "></span>
+<span class="linenos" data-linenos="170 "></span><span class="sd">        Returns:</span>
+<span class="linenos" data-linenos="171 "></span><span class="sd">            fig: the figure of PPI network</span>
+<span class="linenos" data-linenos="172 "></span><span class="sd">            ax: the AxesSubplot of PPI network</span>
+<span class="linenos" data-linenos="173 "></span><span class="sd">        """</span>
+<span class="linenos" data-linenos="174 "></span>        <span class="k">return</span> <span class="n">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
 </details>
 <div class="doc doc-children">
@@ -459,22 +494,22 @@
 </table>
 <details class="quote">
 <summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="157 "></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">gene_type_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span><span class="n">gene_color_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
-<span class="linenos" data-linenos="158 "></span>             <span class="n">score</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos" data-linenos="159 "></span><span class="w">    </span><span class="sd">"""Initialize the protein-protein interaction analysis.</span>
-<span class="linenos" data-linenos="160 "></span>
-<span class="linenos" data-linenos="161 "></span><span class="sd">    Arguments:</span>
-<span class="linenos" data-linenos="162 "></span><span class="sd">        gene: The gene list to analysis PPI</span>
-<span class="linenos" data-linenos="163 "></span><span class="sd">        species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
-<span class="linenos" data-linenos="164 "></span><span class="sd">        gene_type_dict: The gene type dict, the key is gene name, the value is gene type.</span>
-<span class="linenos" data-linenos="165 "></span><span class="sd">        gene_color_dict: The gene color dict, the key is gene name, the value is gene color.</span>
-<span class="linenos" data-linenos="166 "></span><span class="sd">        score: The threshold of protein A and B interaction</span>
-<span class="linenos" data-linenos="167 "></span><span class="sd">    """</span>
-<span class="linenos" data-linenos="168 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="o">=</span><span class="n">gene</span> 
-<span class="linenos" data-linenos="169 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="o">=</span><span class="n">species</span>
-<span class="linenos" data-linenos="170 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">=</span><span class="n">score</span>
-<span class="linenos" data-linenos="171 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="o">=</span><span class="n">gene_type_dict</span>
-<span class="linenos" data-linenos="172 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="o">=</span><span class="n">gene_color_dict</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="138 "></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gene</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span><span class="n">gene_type_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span><span class="n">gene_color_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+<span class="linenos" data-linenos="139 "></span>             <span class="n">score</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos" data-linenos="140 "></span><span class="w">    </span><span class="sd">"""Initialize the protein-protein interaction analysis.</span>
+<span class="linenos" data-linenos="141 "></span>
+<span class="linenos" data-linenos="142 "></span><span class="sd">    Arguments:</span>
+<span class="linenos" data-linenos="143 "></span><span class="sd">        gene: The gene list to analysis PPI</span>
+<span class="linenos" data-linenos="144 "></span><span class="sd">        species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
+<span class="linenos" data-linenos="145 "></span><span class="sd">        gene_type_dict: The gene type dict, the key is gene name, the value is gene type.</span>
+<span class="linenos" data-linenos="146 "></span><span class="sd">        gene_color_dict: The gene color dict, the key is gene name, the value is gene color.</span>
+<span class="linenos" data-linenos="147 "></span><span class="sd">        score: The threshold of protein A and B interaction</span>
+<span class="linenos" data-linenos="148 "></span><span class="sd">    """</span>
+<span class="linenos" data-linenos="149 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="o">=</span><span class="n">gene</span> 
+<span class="linenos" data-linenos="150 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="o">=</span><span class="n">species</span>
+<span class="linenos" data-linenos="151 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="o">=</span><span class="n">score</span>
+<span class="linenos" data-linenos="152 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="o">=</span><span class="n">gene_type_dict</span>
+<span class="linenos" data-linenos="153 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="o">=</span><span class="n">gene_color_dict</span>
 </code></pre></div>
 </details>
 </div>
@@ -504,17 +539,17 @@
 </table>
 <details class="quote">
 <summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="174 "></span><span class="k">def</span> <span class="nf">interaction_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
-<span class="linenos" data-linenos="175 "></span><span class="w">    </span><span class="sd">"""Analysis the protein-protein interaction.</span>
-<span class="linenos" data-linenos="176 "></span>
-<span class="linenos" data-linenos="177 "></span><span class="sd">    Returns:</span>
-<span class="linenos" data-linenos="178 "></span><span class="sd">        G: the networkx object of PPI in query gene list</span>
-<span class="linenos" data-linenos="179 "></span><span class="sd">    """</span>
-<span class="linenos" data-linenos="180 "></span>    <span class="n">G</span><span class="o">=</span><span class="n">generate_G</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="p">,</span>
-<span class="linenos" data-linenos="181 "></span>                      <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span>
-<span class="linenos" data-linenos="182 "></span>                      <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
-<span class="linenos" data-linenos="183 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">=</span><span class="n">G</span> 
-<span class="linenos" data-linenos="184 "></span>    <span class="k">return</span> <span class="n">G</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="155 "></span><span class="k">def</span> <span class="nf">interaction_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
+<span class="linenos" data-linenos="156 "></span><span class="w">    </span><span class="sd">"""Analysis the protein-protein interaction.</span>
+<span class="linenos" data-linenos="157 "></span>
+<span class="linenos" data-linenos="158 "></span><span class="sd">    Returns:</span>
+<span class="linenos" data-linenos="159 "></span><span class="sd">        G: the networkx object of PPI in query gene list</span>
+<span class="linenos" data-linenos="160 "></span><span class="sd">    """</span>
+<span class="linenos" data-linenos="161 "></span>    <span class="n">G</span><span class="o">=</span><span class="n">generate_G</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gene</span><span class="p">,</span>
+<span class="linenos" data-linenos="162 "></span>                      <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span>
+<span class="linenos" data-linenos="163 "></span>                      <span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
+<span class="linenos" data-linenos="164 "></span>    <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">=</span><span class="n">G</span> 
+<span class="linenos" data-linenos="165 "></span>    <span class="k">return</span> <span class="n">G</span>
 </code></pre></div>
 </details>
 </div>
@@ -550,14 +585,14 @@
 </table>
 <details class="quote">
 <summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="186 "></span><span class="k">def</span> <span class="nf">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
-<span class="linenos" data-linenos="187 "></span><span class="w">    </span><span class="sd">"""Plot the protein-protein interaction network.</span>
-<span class="linenos" data-linenos="188 "></span>
-<span class="linenos" data-linenos="189 "></span><span class="sd">    Returns:</span>
-<span class="linenos" data-linenos="190 "></span><span class="sd">        fig: the figure of PPI network</span>
-<span class="linenos" data-linenos="191 "></span><span class="sd">        ax: the AxesSubplot of PPI network</span>
-<span class="linenos" data-linenos="192 "></span><span class="sd">    """</span>
-<span class="linenos" data-linenos="193 "></span>    <span class="k">return</span> <span class="n">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="167 "></span><span class="k">def</span> <span class="nf">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">_axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]:</span>
+<span class="linenos" data-linenos="168 "></span><span class="w">    </span><span class="sd">"""Plot the protein-protein interaction network.</span>
+<span class="linenos" data-linenos="169 "></span>
+<span class="linenos" data-linenos="170 "></span><span class="sd">    Returns:</span>
+<span class="linenos" data-linenos="171 "></span><span class="sd">        fig: the figure of PPI network</span>
+<span class="linenos" data-linenos="172 "></span><span class="sd">        ax: the AxesSubplot of PPI network</span>
+<span class="linenos" data-linenos="173 "></span><span class="sd">    """</span>
+<span class="linenos" data-linenos="174 "></span>    <span class="k">return</span> <span class="n">plot_network</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_type_dict</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">gene_color_dict</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
 </details>
 </div>
@@ -649,37 +684,21 @@
 <span class="linenos" data-linenos="33 "></span>
 <span class="linenos" data-linenos="34 "></span>    <span class="p">}</span>
 <span class="linenos" data-linenos="35 "></span>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<span class="linenos" data-linenos="36 "></span>    <span class="n">res</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'stringId_A'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="37 "></span>                             <span class="s1">'stringId_B'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="38 "></span>                             <span class="s1">'preferredName_A'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="39 "></span>                             <span class="s1">'preferredName_B'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="40 "></span>                             <span class="s1">'ncbiTaxonId'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="41 "></span>                             <span class="s1">'score'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="42 "></span>                             <span class="s1">'nscore'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="43 "></span>                             <span class="s1">'fscore'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="44 "></span>                             <span class="s1">'pscore'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="45 "></span>                             <span class="s1">'ascore'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="46 "></span>                             <span class="s1">'escore'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="47 "></span>                             <span class="s1">'dscore'</span><span class="p">,</span>\
-<span class="linenos" data-linenos="48 "></span>                             <span class="s1">'tscore'</span><span class="p">])</span>
-<span class="linenos" data-linenos="49 "></span>    <span class="n">num</span><span class="o">=</span><span class="mi">0</span>
-<span class="linenos" data-linenos="50 "></span>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">):</span>
-<span class="linenos" data-linenos="51 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
-<span class="linenos" data-linenos="52 "></span>        <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">'stringId_A'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>\
-<span class="linenos" data-linenos="53 "></span>                             <span class="s1">'stringId_B'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>\
-<span class="linenos" data-linenos="54 "></span>                             <span class="s1">'preferredName_A'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>\
-<span class="linenos" data-linenos="55 "></span>                             <span class="s1">'preferredName_B'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>\
-<span class="linenos" data-linenos="56 "></span>                             <span class="s1">'ncbiTaxonId'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>\
-<span class="linenos" data-linenos="57 "></span>                             <span class="s1">'score'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>\
-<span class="linenos" data-linenos="58 "></span>                             <span class="s1">'nscore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span>\
-<span class="linenos" data-linenos="59 "></span>                             <span class="s1">'fscore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span>\
-<span class="linenos" data-linenos="60 "></span>                             <span class="s1">'pscore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span>\
-<span class="linenos" data-linenos="61 "></span>                             <span class="s1">'ascore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span>\
-<span class="linenos" data-linenos="62 "></span>                             <span class="s1">'escore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span>\
-<span class="linenos" data-linenos="63 "></span>                             <span class="s1">'dscore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span>\
-<span class="linenos" data-linenos="64 "></span>                             <span class="s1">'tscore'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">12</span><span class="p">]}</span>
-<span class="linenos" data-linenos="65 "></span>        <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
-<span class="linenos" data-linenos="66 "></span>    <span class="k">return</span> <span class="n">res</span>
+<span class="linenos" data-linenos="36 "></span>    <span class="n">res</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="linenos" data-linenos="37 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'stringId_A'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="38 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'stringId_B'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="39 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'preferredName_A'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="40 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'preferredName_B'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="41 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'ncbiTaxonId'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="42 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'score'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="43 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'nscore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">6</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="44 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'fscore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">7</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="45 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'pscore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">8</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="46 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'ascore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">9</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="47 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'escore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="48 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'dscore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">11</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="49 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'tscore'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">12</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="50 "></span>    <span class="k">return</span> <span class="n">res</span>
 </code></pre></div>
 </details>
 </div>
@@ -742,45 +761,42 @@
 </table>
 <details class="quote">
 <summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 70 "></span><span class="k">def</span> <span class="nf">string_map</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-<span class="linenos" data-linenos=" 71 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to find the gene name in string-db</span>
-<span class="linenos" data-linenos=" 72 "></span>
-<span class="linenos" data-linenos=" 73 "></span><span class="sd">    Arguments:</span>
-<span class="linenos" data-linenos=" 74 "></span><span class="sd">        gene: The gene list to analysis PPI</span>
-<span class="linenos" data-linenos=" 75 "></span><span class="sd">        species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
-<span class="linenos" data-linenos=" 76 "></span>
-<span class="linenos" data-linenos=" 77 "></span><span class="sd">    Returns:</span>
-<span class="linenos" data-linenos=" 78 "></span><span class="sd">        res: the dataframe of query gene and new gene</span>
-<span class="linenos" data-linenos=" 79 "></span>
-<span class="linenos" data-linenos=" 80 "></span><span class="sd">    """</span>
-<span class="linenos" data-linenos=" 81 "></span>    <span class="kn">import</span> <span class="nn">requests</span> <span class="c1">## python -m pip install requests</span>
-<span class="linenos" data-linenos=" 82 "></span>    <span class="n">string_api_url</span> <span class="o">=</span> <span class="s2">"https://string-db.org/api"</span>
-<span class="linenos" data-linenos=" 83 "></span>    <span class="n">output_format</span> <span class="o">=</span> <span class="s2">"tsv-no-header"</span>
-<span class="linenos" data-linenos=" 84 "></span>    <span class="n">method</span> <span class="o">=</span> <span class="s2">"get_string_ids"</span>
-<span class="linenos" data-linenos=" 85 "></span>    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos" data-linenos=" 86 "></span>
-<span class="linenos" data-linenos=" 87 "></span>        <span class="s2">"identifiers"</span> <span class="p">:</span> <span class="s2">"</span><span class="se">\r</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gene</span><span class="p">),</span> <span class="c1"># your protein list</span>
-<span class="linenos" data-linenos=" 88 "></span>        <span class="s2">"species"</span> <span class="p">:</span> <span class="n">species</span><span class="p">,</span> <span class="c1"># species NCBI identifier </span>
-<span class="linenos" data-linenos=" 89 "></span>        <span class="s2">"limit"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># only one (best) identifier per input protein</span>
-<span class="linenos" data-linenos=" 90 "></span>        <span class="s2">"echo_query"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># see your input identifiers in the output</span>
-<span class="linenos" data-linenos=" 91 "></span>        <span class="s2">"caller_identity"</span> <span class="p">:</span> <span class="s2">"www.awesome_app.org"</span> <span class="c1"># your app name</span>
-<span class="linenos" data-linenos=" 92 "></span>
-<span class="linenos" data-linenos=" 93 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos=" 94 "></span>    <span class="n">request_url</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">string_api_url</span><span class="p">,</span> <span class="n">output_format</span><span class="p">,</span> <span class="n">method</span><span class="p">])</span>
-<span class="linenos" data-linenos=" 95 "></span>    <span class="n">results</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-<span class="linenos" data-linenos=" 96 "></span>    <span class="n">res</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'queryItem'</span><span class="p">,</span><span class="s1">'queryIndex'</span><span class="p">,</span><span class="s1">'stringId'</span><span class="p">,</span><span class="s1">'ncbiTaxonId'</span><span class="p">,</span><span class="s1">'taxonName'</span><span class="p">,</span><span class="s1">'preferredName'</span><span class="p">,</span><span class="s1">'annotation'</span><span class="p">])</span>
-<span class="linenos" data-linenos=" 97 "></span>    <span class="n">num</span><span class="o">=</span><span class="mi">0</span>
-<span class="linenos" data-linenos=" 98 "></span>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">):</span>
-<span class="linenos" data-linenos=" 99 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
-<span class="linenos" data-linenos="100 "></span>        <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s1">'queryItem'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>\
-<span class="linenos" data-linenos="101 "></span>          <span class="s1">'queryIndex'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>\
-<span class="linenos" data-linenos="102 "></span>          <span class="s1">'stringId'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>\
-<span class="linenos" data-linenos="103 "></span>          <span class="s1">'ncbiTaxonId'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>\
-<span class="linenos" data-linenos="104 "></span>          <span class="s1">'taxonName'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>\
-<span class="linenos" data-linenos="105 "></span>          <span class="s1">'preferredName'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>\
-<span class="linenos" data-linenos="106 "></span>          <span class="s1">'annotation'</span><span class="p">:</span><span class="n">l</span><span class="p">[</span><span class="mi">6</span><span class="p">]}</span>
-<span class="linenos" data-linenos="107 "></span>        <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
-<span class="linenos" data-linenos="108 "></span>    <span class="k">return</span> <span class="n">res</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="54 "></span><span class="k">def</span> <span class="nf">string_map</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="linenos" data-linenos="55 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to find the gene name in string-db</span>
+<span class="linenos" data-linenos="56 "></span>
+<span class="linenos" data-linenos="57 "></span><span class="sd">    Arguments:</span>
+<span class="linenos" data-linenos="58 "></span><span class="sd">        gene: The gene list to analysis PPI</span>
+<span class="linenos" data-linenos="59 "></span><span class="sd">        species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
+<span class="linenos" data-linenos="60 "></span>
+<span class="linenos" data-linenos="61 "></span><span class="sd">    Returns:</span>
+<span class="linenos" data-linenos="62 "></span><span class="sd">        res: the dataframe of query gene and new gene</span>
+<span class="linenos" data-linenos="63 "></span>
+<span class="linenos" data-linenos="64 "></span><span class="sd">    """</span>
+<span class="linenos" data-linenos="65 "></span>    <span class="kn">import</span> <span class="nn">requests</span> <span class="c1">## python -m pip install requests</span>
+<span class="linenos" data-linenos="66 "></span>    <span class="n">string_api_url</span> <span class="o">=</span> <span class="s2">"https://string-db.org/api"</span>
+<span class="linenos" data-linenos="67 "></span>    <span class="n">output_format</span> <span class="o">=</span> <span class="s2">"tsv-no-header"</span>
+<span class="linenos" data-linenos="68 "></span>    <span class="n">method</span> <span class="o">=</span> <span class="s2">"get_string_ids"</span>
+<span class="linenos" data-linenos="69 "></span>    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos" data-linenos="70 "></span>
+<span class="linenos" data-linenos="71 "></span>        <span class="s2">"identifiers"</span> <span class="p">:</span> <span class="s2">"</span><span class="se">\r</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gene</span><span class="p">),</span> <span class="c1"># your protein list</span>
+<span class="linenos" data-linenos="72 "></span>        <span class="s2">"species"</span> <span class="p">:</span> <span class="n">species</span><span class="p">,</span> <span class="c1"># species NCBI identifier </span>
+<span class="linenos" data-linenos="73 "></span>        <span class="s2">"limit"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># only one (best) identifier per input protein</span>
+<span class="linenos" data-linenos="74 "></span>        <span class="s2">"echo_query"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># see your input identifiers in the output</span>
+<span class="linenos" data-linenos="75 "></span>        <span class="s2">"caller_identity"</span> <span class="p">:</span> <span class="s2">"www.awesome_app.org"</span> <span class="c1"># your app name</span>
+<span class="linenos" data-linenos="76 "></span>
+<span class="linenos" data-linenos="77 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="78 "></span>    <span class="n">request_url</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">string_api_url</span><span class="p">,</span> <span class="n">output_format</span><span class="p">,</span> <span class="n">method</span><span class="p">])</span>
+<span class="linenos" data-linenos="79 "></span>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">request_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="linenos" data-linenos="80 "></span>    <span class="n">res</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'queryItem'</span><span class="p">,</span><span class="s1">'queryIndex'</span><span class="p">,</span><span class="s1">'stringId'</span><span class="p">,</span><span class="s1">'ncbiTaxonId'</span><span class="p">,</span><span class="s1">'taxonName'</span><span class="p">,</span><span class="s1">'preferredName'</span><span class="p">,</span><span class="s1">'annotation'</span><span class="p">])</span>
+<span class="linenos" data-linenos="81 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'queryItem'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="82 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'queryIndex'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="83 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'stringId'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="84 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'ncbiTaxonId'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="85 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'taxonName'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="86 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'preferredName'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="87 "></span>    <span class="n">res</span><span class="p">[</span><span class="s1">'annotation'</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">j</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)[</span><span class="mi">6</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)]</span>
+<span class="linenos" data-linenos="88 "></span>
+<span class="linenos" data-linenos="89 "></span>    <span class="k">return</span> <span class="n">res</span>
 </code></pre></div>
 </details>
 </div>
@@ -853,32 +869,32 @@
 </table>
 <details class="quote">
 <summary>Source code in <code>/Users/fernandozeng/miniforge3/envs/scbasset/lib/python3.8/site-packages/omicverse/bulk/_network.py</code></summary>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="128 "></span><span class="k">def</span> <span class="nf">generate_G</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">score</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
-<span class="linenos" data-linenos="129 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to get the PPI network in string-db</span>
-<span class="linenos" data-linenos="130 "></span>
-<span class="linenos" data-linenos="131 "></span><span class="sd">    Arguments:</span>
-<span class="linenos" data-linenos="132 "></span><span class="sd">        gene: The gene list to analysis PPI</span>
-<span class="linenos" data-linenos="133 "></span><span class="sd">        species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
-<span class="linenos" data-linenos="134 "></span><span class="sd">        score: The threshold of protein A and B interaction</span>
-<span class="linenos" data-linenos="135 "></span>
-<span class="linenos" data-linenos="136 "></span><span class="sd">    Returns:</span>
-<span class="linenos" data-linenos="137 "></span><span class="sd">        G: the networkx object of PPI in query gene list</span>
-<span class="linenos" data-linenos="138 "></span>
-<span class="linenos" data-linenos="139 "></span><span class="sd">    """</span>
-<span class="linenos" data-linenos="140 "></span>
-<span class="linenos" data-linenos="141 "></span>    <span class="n">a</span><span class="o">=</span><span class="n">string_interaction</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span><span class="n">species</span><span class="p">)</span>
-<span class="linenos" data-linenos="142 "></span>    <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="linenos" data-linenos="143 "></span>    <span class="n">b</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="linenos" data-linenos="144 "></span>    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-<span class="linenos" data-linenos="145 "></span>    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'preferredName_A'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">+</span><span class="n">b</span><span class="p">[</span><span class="s1">'preferredName_B'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
-<span class="linenos" data-linenos="146 "></span>
-<span class="linenos" data-linenos="147 "></span>    <span class="c1">#Connect nodes</span>
-<span class="linenos" data-linenos="148 "></span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-<span class="linenos" data-linenos="149 "></span>        <span class="n">col_label</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'preferredName_A'</span><span class="p">]</span>
-<span class="linenos" data-linenos="150 "></span>        <span class="n">row_label</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'preferredName_B'</span><span class="p">]</span>
-<span class="linenos" data-linenos="151 "></span>        <span class="k">if</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'score'</span><span class="p">])</span><span class="o">&gt;</span><span class="n">score</span><span class="p">):</span>
-<span class="linenos" data-linenos="152 "></span>            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">col_label</span><span class="p">,</span><span class="n">row_label</span><span class="p">)</span>
-<span class="linenos" data-linenos="153 "></span>    <span class="k">return</span> <span class="n">G</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="109 "></span><span class="k">def</span> <span class="nf">generate_G</span><span class="p">(</span><span class="n">gene</span><span class="p">:</span><span class="nb">list</span><span class="p">,</span><span class="n">species</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="n">score</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">:</span>
+<span class="linenos" data-linenos="110 "></span><span class="w">    </span><span class="sa">r</span><span class="sd">"""A Python library to get the PPI network in string-db</span>
+<span class="linenos" data-linenos="111 "></span>
+<span class="linenos" data-linenos="112 "></span><span class="sd">    Arguments:</span>
+<span class="linenos" data-linenos="113 "></span><span class="sd">        gene: The gene list to analysis PPI</span>
+<span class="linenos" data-linenos="114 "></span><span class="sd">        species: NCBI taxon identifiers (e.g. Human is 9606, see: STRING organisms).</span>
+<span class="linenos" data-linenos="115 "></span><span class="sd">        score: The threshold of protein A and B interaction</span>
+<span class="linenos" data-linenos="116 "></span>
+<span class="linenos" data-linenos="117 "></span><span class="sd">    Returns:</span>
+<span class="linenos" data-linenos="118 "></span><span class="sd">        G: the networkx object of PPI in query gene list</span>
+<span class="linenos" data-linenos="119 "></span>
+<span class="linenos" data-linenos="120 "></span><span class="sd">    """</span>
+<span class="linenos" data-linenos="121 "></span>
+<span class="linenos" data-linenos="122 "></span>    <span class="n">a</span><span class="o">=</span><span class="n">string_interaction</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span><span class="n">species</span><span class="p">)</span>
+<span class="linenos" data-linenos="123 "></span>    <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="linenos" data-linenos="124 "></span>    <span class="n">b</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="linenos" data-linenos="125 "></span>    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="linenos" data-linenos="126 "></span>    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'preferredName_A'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">+</span><span class="n">b</span><span class="p">[</span><span class="s1">'preferredName_B'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+<span class="linenos" data-linenos="127 "></span>
+<span class="linenos" data-linenos="128 "></span>    <span class="c1">#Connect nodes</span>
+<span class="linenos" data-linenos="129 "></span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+<span class="linenos" data-linenos="130 "></span>        <span class="n">col_label</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'preferredName_A'</span><span class="p">]</span>
+<span class="linenos" data-linenos="131 "></span>        <span class="n">row_label</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'preferredName_B'</span><span class="p">]</span>
+<span class="linenos" data-linenos="132 "></span>        <span class="k">if</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">'score'</span><span class="p">])</span><span class="o">&gt;</span><span class="n">score</span><span class="p">):</span>
+<span class="linenos" data-linenos="133 "></span>            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">col_label</span><span class="p">,</span><span class="n">row_label</span><span class="p">)</span>
+<span class="linenos" data-linenos="134 "></span>    <span class="k">return</span> <span class="n">G</span>
 </code></pre></div>
 </details>
 </div>

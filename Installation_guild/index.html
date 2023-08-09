@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Zehua Zeng" name="author"/>
 <link href=".." rel="prev"/>
-<link href="../Tutorials-bulk/t_deg/" rel="next"/>
+<link href="../Tutorials-bulk/t_bulk_combat/" rel="next"/>
 <link href="../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
 <title>Installation - omicverse Readthedocs</title>
@@ -140,6 +140,11 @@
 <nav aria-label="Prerequisites" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#platform">
+    Platform
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pip-prerequisites">
     pip prerequisites
   </a>
@@ -153,18 +158,19 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#conda">
+    Conda
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pip">
     Pip
   </a>
-<nav aria-label="Pip" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pytorch">
-    Pytorch
-  </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#others">
+    Others
+  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#development">
@@ -198,6 +204,11 @@
           Bulk
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk/t_bulk_combat/">
+        Batch correction in Bulk RNA-seq or microarray data
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk/t_deg/">
         Different Expression Analysis
@@ -239,8 +250,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_preprocess/">
+        Preprocessing the data of scRNA-seq with omicverse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_single_batch/">
+        Data integration and batch correction
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_cellanno/">
-        Celltype annotation with SCSA
+        Celltype auto annotation with SCSA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_metatime/">
+        Celltype auto annotation with MetaTiME
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_tosica/">
+        Celltype annotation migration(mapping) with TOSICA
       </a>
 </li>
 <li class="md-nav__item">
@@ -256,6 +287,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_aucell/">
         Pathway analysis with AUCell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_scdeg/">
+        Differential expression analysis in single cell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_simba/">
+        Data integration and batch correction with SIMBA
       </a>
 </li>
 <li class="md-nav__item">
@@ -278,11 +319,6 @@
         Multi omics analysis by MOFA and GLUE
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Tutorials-single/t_nocd/">
-        Overlapping Celltype annotation with GNN
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -298,6 +334,11 @@
           Bulk2Single
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk2single/t_bulktrajblend/">
+        Bulk RNA-seq generate 'interrupted' cells to interpolate scRNA-seq
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk2single/t_bulk2single/">
         Bulk RNA-seq to Single RNA-seq
@@ -350,6 +391,11 @@
 <nav aria-label="Prerequisites" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#platform">
+    Platform
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pip-prerequisites">
     pip prerequisites
   </a>
@@ -363,18 +409,19 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#conda">
+    Conda
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#pip">
     Pip
   </a>
-<nav aria-label="Pip" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pytorch">
-    Pytorch
-  </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#others">
+    Others
+  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#development">
@@ -390,22 +437,47 @@
 <article class="md-content__inner md-typeset">
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h1>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
-<p>OmicVerse now only can be installed by pypi and you need to install <code>pytorch</code> at first</p>
+<p>OmicVerse can be installed via conda or pypi and you need to install <code>pytorch</code> at first</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To avoid potential dependency conflicts, installing within a pip environment is recommended.</p>
+<p>To avoid potential dependency conflicts, installing within a <code>conda</code> environment is recommended. And using <code>pip install -U omicverse</code> to update.</p>
 </div>
+<h3 id="platform">Platform<a class="headerlink" href="#platform" title="Permanent link">¶</a></h3>
+<p>In different platform, there are some differences in the most appropriate installation method.</p>
+<ul>
+<li><code>Windows</code>: We recommend installing the <a href="https://learn.microsoft.com/en-us/windows/wsl/install"><code>wsl</code> subsystem</a> and installing <code>conda</code> in the wsl subsystem to configure the omicverse environment.</li>
+<li><code>Linux</code>: We can choose to install <a href="https://www.anaconda.com/">anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>, and then use conda to configure the omicverse environment</li>
+<li><code>Mac Os</code>: We recommend using <a href="https://github.com/conda-forge/miniforge"><code>miniforge</code></a>  or <a href="https://www.rho-signal-effective-analytics.com/modules/pre-course/miniconda-installation/"><code>mambaforge</code></a>to configure.</li>
+</ul>
 <h3 id="pip-prerequisites">pip prerequisites<a class="headerlink" href="#pip-prerequisites" title="Permanent link">¶</a></h3>
 <ul>
 <li>If using conda/mamba, then just run <code>conda install -c anaconda pip</code> and skip this section.</li>
 <li>Install Python, we prefer the pyenv version management system, along with pyenv-virtualenv.</li>
 </ul>
 <h3 id="apple-silicon-prerequisites">Apple silicon prerequisites<a class="headerlink" href="#apple-silicon-prerequisites" title="Permanent link">¶</a></h3>
-<p>Installing Pyomic on a Mac with Apple Silicon is only possible using a native version of python. A native version of python can be installed with an Apple Silicon version of mambaforge (which can be installed from a native version of homebrew via <code>brew install --cask mambaforge</code>). </p>
+<p>Installing omicverse on a Mac with Apple Silicon is only possible using a native version of python. A native version of python can be installed with an Apple Silicon version of mambaforge (which can be installed from a native version of homebrew via <code>brew install --cask mambaforge</code>). </p>
+<h2 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">¶</a></h2>
+<ol>
+<li>Install conda. We typically use the <code>mambaforge</code> distribution. Use python&gt;=3.8, conda consider using mamba instead of conda.</li>
+<li>Create a new conda environment: </li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>omicverse<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+</code></pre></div>
+3.  Activate your environment:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>conda<span class="w"> </span>activate<span class="w"> </span>omicverse
+</code></pre></div>
+4.  Install <a href="https://pytorch.org/get-started/locally/">PyTorch</a> at first:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>conda<span class="w"> </span>install<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">11</span>.7<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
+</code></pre></div>
+5.  Install <code>omicverse</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>conda<span class="w"> </span>install<span class="w"> </span>omicverse<span class="w"> </span>-c<span class="w"> </span>conda-forge
+</code></pre></div>
 <h2 id="pip">Pip<a class="headerlink" href="#pip" title="Permanent link">¶</a></h2>
 <p>The <code>omicverse</code> package can be installed via pip using one of the following commands:</p>
-<h3 id="pytorch">Pytorch<a class="headerlink" href="#pytorch" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1"># ROCM 5.2 (Linux only)</span>
+<ol>
+<li>Install <a href="https://pytorch.org/get-started/locally/">PyTorch</a> at first: More about the installation can be found at <a href="https://pytorch.org/get-started/locally/">PyTorch</a>. </li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1"># ROCM 5.2 (Linux only)</span>
 <span class="linenos" data-linenos="2 "></span>pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--extra-index-url
 <span class="linenos" data-linenos="3 "></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.13.1+rocm5.2<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.14.1+rocm5.2<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/rocm5.2
 <span class="linenos" data-linenos="4 "></span><span class="c1"># CUDA 11.6</span>
@@ -415,12 +487,20 @@
 <span class="linenos" data-linenos="8 "></span><span class="c1"># CPU only</span>
 <span class="linenos" data-linenos="9 "></span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.13.1+cpu<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.14.1+cpu<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>--extra-index-url<span class="w"> </span>https://download.pytorch.org/whl/cpu
 </code></pre></div>
-<p>More about the installation can be found at <a href="https://pytorch.org/get-started/locally/">PyTorch</a>. After the installation of pytorch, we can start to install <code>omicverse</code> by <code>pip</code></p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>omicverse
+2. After the installation of pytorch, we can start to install <code>omicverse</code> by <code>pip</code></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>omicverse
 <span class="linenos" data-linenos="2 "></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>numba
 </code></pre></div>
-<p>Nightly version - clone this repo and run:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>pip<span class="w"> </span>install<span class="w"> </span>.
+3. If you want to using Nightly verseion. There are two ways for you to install</p>
+<ul>
+<li>Nightly version - clone this <a href="https://github.com/Starlitnightly/omicverse">repo</a> and run: <code>pip install .</code></li>
+<li>Using <code>pip install git+https://github.com/Starlitnightly/omicverse.git</code></li>
+</ul>
+<h2 id="others">Others<a class="headerlink" href="#others" title="Permanent link">¶</a></h2>
+<p>if you using M1/M2 silicon, perhaps the following code will be helped:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>conda<span class="w"> </span>install<span class="w"> </span>s_gd2<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<span class="linenos" data-linenos="2 "></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>omicverse<span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span>conda<span class="w"> </span>install<span class="w"> </span>pytorch::pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>-c<span class="w"> </span>pytorch
 </code></pre></div>
 <h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">¶</a></h2>
 <p>For development - clone this repo and run:</p>

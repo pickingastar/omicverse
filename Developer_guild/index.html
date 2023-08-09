@@ -147,6 +147,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk/t_bulk_combat/">
+        Batch correction in Bulk RNA-seq or microarray data
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk/t_deg/">
         Different Expression Analysis
       </a>
@@ -187,8 +192,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_preprocess/">
+        Preprocessing the data of scRNA-seq with omicverse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_single_batch/">
+        Data integration and batch correction
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_cellanno/">
-        Celltype annotation with SCSA
+        Celltype auto annotation with SCSA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_metatime/">
+        Celltype auto annotation with MetaTiME
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_tosica/">
+        Celltype annotation migration(mapping) with TOSICA
       </a>
 </li>
 <li class="md-nav__item">
@@ -204,6 +229,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_aucell/">
         Pathway analysis with AUCell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_scdeg/">
+        Differential expression analysis in single cell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_simba/">
+        Data integration and batch correction with SIMBA
       </a>
 </li>
 <li class="md-nav__item">
@@ -226,11 +261,6 @@
         Multi omics analysis by MOFA and GLUE
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Tutorials-single/t_nocd/">
-        Overlapping Celltype annotation with GNN
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -246,6 +276,11 @@
           Bulk2Single
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk2single/t_bulktrajblend/">
+        Bulk RNA-seq generate 'interrupted' cells to interpolate scRNA-seq
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk2single/t_bulk2single/">
         Bulk RNA-seq to Single RNA-seq
@@ -288,8 +323,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#main-components">
-    Main components
+<a class="md-nav__link" href="#framework">
+    Framework
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-developer">
+    For Developer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pull-request">
+    Pull request
   </a>
 </li>
 </ul>
@@ -310,8 +355,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#main-components">
-    Main components
+<a class="md-nav__link" href="#framework">
+    Framework
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-developer">
+    For Developer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pull-request">
+    Pull request
   </a>
 </li>
 </ul>
@@ -322,18 +377,57 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="developer-guild">Developer guild<a class="headerlink" href="#developer-guild" title="Permanent link">¶</a></h1>
-<blockquote>
-<p><strong>Note</strong></p>
-<p>To better understand the following guide, you may check out our <a href="">publication</a> first to learn about the general idea.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To better understand the following guide, you may check out our <a href="https://doi.org/10.1101/2023.06.06.543913">publication</a> first to learn about the general idea.</p>
+</div>
 <p>Below we describe main components of the framework, and how to extend the existing implementations.</p>
-<h2 id="main-components">Main components<a class="headerlink" href="#main-components" title="Permanent link">¶</a></h2>
-<p>A omicverse framework is primarily composed of 2 components.</p>
+<h2 id="framework">Framework<a class="headerlink" href="#framework" title="Permanent link">¶</a></h2>
+<p>The omicverse code is stored in the <a href="https://github.com/Starlitnightly/omicverse/tree/master/omicverse">omicverse folder</a> in the github repository, with the <code>__init__.py</code> file taking care of the import of the library functions.</p>
+<p>A omicverse framework is primarily composed of 5 components.</p>
 <ul>
-<li>bulk omic: to analysis the bulk omic-seq like RNA-seq or Proper-seq.</li>
-<li>single cell omic: to analysis the single cell omic-seq like scRNA-seq or scATAC-seq</li>
+<li><code>utils</code>: Functions, including data, plotting, etc.</li>
+<li><code>pp</code>: preprocess, including quantity control, normalize, etc.</li>
+<li><code>bulk</code>: to analysis the bulk omic-seq like RNA-seq or Proper-seq.</li>
+<li><code>single</code>: to analysis the single cell omic-seq like scRNA-seq or scATAC-seq</li>
+<li><code>bulk2single</code>: to integrate the bulk RNA-seq and single cell RNA-seq</li>
 </ul>
-<p>New extensions can be added to <code>bulk</code> or <code>single</code> as well.</p>
+<p>The <code>__init__.py</code> file is responsible for importing function entries within each folder, and all function functions use a file starting with <code>_*.py</code> for function writing.</p>
+<h2 id="for-developer">For Developer<a class="headerlink" href="#for-developer" title="Permanent link">¶</a></h2>
+<p>If you want to provide pull request for omicverse, you need to be clear about which module the functionality you are developing is subordinate to, e.g. <code>TOSICA</code> belongs to the algorithms of the single-cell domain, i.e., you need to add the <code>_tosica.py</code> file inside the <code>single</code> folder of <code>omicverse</code> and <code>_init__.py</code> inside the <code>from . _tosica import pyTOSICA</code> to make the omicverse add the new functionality</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>.
+<span class="linenos" data-linenos="2 "></span>├──<span class="w"> </span>omicverse<span class="w">               </span>
+<span class="linenos" data-linenos="3 "></span>├─────<span class="w"> </span>single
+<span class="linenos" data-linenos="4 "></span>├────────<span class="w"> </span>__init__.py<span class="w"> </span>
+<span class="linenos" data-linenos="5 "></span>├────────<span class="w"> </span>_tosica.py<span class="w"> </span>
+</code></pre></div>
+<p>All functions require parameter descriptions in the following format:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">adata</span><span class="p">:</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'scanpy'</span><span class="p">,</span> <span class="n">target_sum</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">50</span><span class="o">*</span><span class="mf">1e4</span><span class="p">,</span> <span class="n">n_HVGs</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="n">organism</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">'human'</span><span class="p">,</span> <span class="n">no_cc</span><span class="p">:</span><span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">anndata</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="sd">"""</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="sd">    Preprocesses the AnnData object adata using either a scanpy or a pearson residuals workflow for size normalization</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="sd">    and highly variable genes (HVGs) selection, and calculates signature scores if necessary. </span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="sd">    Arguments:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="sd">        adata: The data matrix.</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="sd">        mode: The mode for size normalization and HVGs selection. It can be either 'scanpy' or 'pearson'. If 'scanpy', performs size normalization using scanpy's normalize_total() function and selects HVGs </span>
+<span class="linenos" data-linenos="10 "></span><span class="sd">            using pegasus' highly_variable_features() function with batch correction. If 'pearson', selects HVGs </span>
+<span class="linenos" data-linenos="11 "></span><span class="sd">            using scanpy's experimental.pp.highly_variable_genes() function with pearson residuals method and performs </span>
+<span class="linenos" data-linenos="12 "></span><span class="sd">            size normalization using scanpy's experimental.pp.normalize_pearson_residuals() function. </span>
+<span class="linenos" data-linenos="13 "></span><span class="sd">        target_sum: The target total count after normalization.</span>
+<span class="linenos" data-linenos="14 "></span><span class="sd">        n_HVGs: the number of HVGs to select.</span>
+<span class="linenos" data-linenos="15 "></span><span class="sd">        organism: The organism of the data. It can be either 'human' or 'mouse'. </span>
+<span class="linenos" data-linenos="16 "></span><span class="sd">        no_cc: Whether to remove cc-correlated genes from HVGs.</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="sd">    Returns:</span>
+<span class="linenos" data-linenos="19 "></span><span class="sd">        adata: The preprocessed data matrix. </span>
+<span class="linenos" data-linenos="20 "></span><span class="sd">    """</span>
+</code></pre></div>
+<h2 id="pull-request">Pull request<a class="headerlink" href="#pull-request" title="Permanent link">¶</a></h2>
+<ol>
+<li>You need to <code>fork</code> omicverse at first, and git clone your fork from your repository.</li>
+<li>When you updated the related function development, open a pull request and waited reviewed and merged.</li>
+</ol>
 </article>
 </div>
 </div>

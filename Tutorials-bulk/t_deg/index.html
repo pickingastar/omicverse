@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Zehua Zeng" name="author"/>
-<link href="../../Installation_guild/" rel="prev"/>
+<link href="../t_bulk_combat/" rel="prev"/>
 <link href="../t_deseq2/" rel="next"/>
 <link href="../../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
@@ -147,6 +147,11 @@
           Bulk
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../t_bulk_combat/">
+        Batch correction in Bulk RNA-seq or microarray data
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -226,8 +231,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-single/t_preprocess/">
+        Preprocessing the data of scRNA-seq with omicverse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-single/t_single_batch/">
+        Data integration and batch correction
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../Tutorials-single/t_cellanno/">
-        Celltype annotation with SCSA
+        Celltype auto annotation with SCSA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-single/t_metatime/">
+        Celltype auto annotation with MetaTiME
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-single/t_tosica/">
+        Celltype annotation migration(mapping) with TOSICA
       </a>
 </li>
 <li class="md-nav__item">
@@ -243,6 +268,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Tutorials-single/t_aucell/">
         Pathway analysis with AUCell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-single/t_scdeg/">
+        Differential expression analysis in single cell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-single/t_simba/">
+        Data integration and batch correction with SIMBA
       </a>
 </li>
 <li class="md-nav__item">
@@ -265,11 +300,6 @@
         Multi omics analysis by MOFA and GLUE
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../Tutorials-single/t_nocd/">
-        Overlapping Celltype annotation with GNN
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -285,6 +315,11 @@
           Bulk2Single
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-bulk2single/t_bulktrajblend/">
+        Bulk RNA-seq generate 'interrupted' cells to interpolate scRNA-seq
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../Tutorials-bulk2single/t_bulk2single/">
         Bulk RNA-seq to Single RNA-seq
@@ -1390,6 +1425,7 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Different-Expression-Analysis">Different Expression Analysis<a class="anchor-link" href="#Different-Expression-Analysis">¶</a></h1><p>An important task of bulk rna-seq analysis is the different expression , which we can perform with omicverse. For different expression analysis, ov change the <code>gene_id</code> to <code>gene_name</code> of matrix first. When our dataset existed the batch effect, we can use the SizeFactors of DEseq2 to normalize it, and use <code>t-test</code> of <code>wilcoxon</code> to calculate the p-value of genes. Here we demonstrate this pipeline with a matrix from <code>featureCounts</code>. The same pipeline would generally be used to analyze any collection of RNA-seq tasks.</p>
+<p>Colab_Reproducibility：<a href="https://colab.research.google.com/drive/19MyE4hNu_PRtz7Yvhs3VIOR8VMc9PkyI?usp=sharing">https://colab.research.google.com/drive/19MyE4hNu_PRtz7Yvhs3VIOR8VMc9PkyI?usp=sharing</a></p>
 </div>
 </div>
 </div>

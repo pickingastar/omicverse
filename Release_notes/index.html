@@ -148,6 +148,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk/t_bulk_combat/">
+        Batch correction in Bulk RNA-seq or microarray data
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk/t_deg/">
         Different Expression Analysis
       </a>
@@ -188,8 +193,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_preprocess/">
+        Preprocessing the data of scRNA-seq with omicverse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_single_batch/">
+        Data integration and batch correction
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_cellanno/">
-        Celltype annotation with SCSA
+        Celltype auto annotation with SCSA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_metatime/">
+        Celltype auto annotation with MetaTiME
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_tosica/">
+        Celltype annotation migration(mapping) with TOSICA
       </a>
 </li>
 <li class="md-nav__item">
@@ -205,6 +230,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-single/t_aucell/">
         Pathway analysis with AUCell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_scdeg/">
+        Differential expression analysis in single cell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-single/t_simba/">
+        Data integration and batch correction with SIMBA
       </a>
 </li>
 <li class="md-nav__item">
@@ -227,11 +262,6 @@
         Multi omics analysis by MOFA and GLUE
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../Tutorials-single/t_nocd/">
-        Overlapping Celltype annotation with GNN
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -247,6 +277,11 @@
           Bulk2Single
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tutorials-bulk2single/t_bulktrajblend/">
+        Bulk RNA-seq generate 'interrupted' cells to interpolate scRNA-seq
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Tutorials-bulk2single/t_bulk2single/">
         Bulk RNA-seq to Single RNA-seq
@@ -519,6 +554,177 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-140">
+    v 1.4.0
+  </a>
+<nav aria-label="v 1.4.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk2single-module_6">
+    bulk2single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_8">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utils">
+    utils
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-141">
+    v 1.4.1
+  </a>
+<nav aria-label="v 1.4.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-143">
+    v 1.4.3
+  </a>
+<nav aria-label="v 1.4.3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_1">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-144">
+    v 1.4.4
+  </a>
+<nav aria-label="v 1.4.4" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_9">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_2">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-145">
+    v 1.4.5
+  </a>
+<nav aria-label="v 1.4.5" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_10">
+    single module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1412">
+    v 1.4.12
+  </a>
+<nav aria-label="v 1.4.12" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_11">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_3">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1413">
+    v 1.4.13
+  </a>
+<nav aria-label="v 1.4.13" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_5">
+    bulk module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_4">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1414">
+    v 1.4.14
+  </a>
+<nav aria-label="v 1.4.14" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_5">
+    preprocess module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utils-module_1">
+    utils module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_12">
+    single module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1417">
+    v 1.4.17
+  </a>
+<nav aria-label="v 1.4.17" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_6">
+    bulk module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_13">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_6">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -777,6 +983,177 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-140">
+    v 1.4.0
+  </a>
+<nav aria-label="v 1.4.0" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk2single-module_6">
+    bulk2single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_8">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utils">
+    utils
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-141">
+    v 1.4.1
+  </a>
+<nav aria-label="v 1.4.1" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-143">
+    v 1.4.3
+  </a>
+<nav aria-label="v 1.4.3" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_1">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-144">
+    v 1.4.4
+  </a>
+<nav aria-label="v 1.4.4" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_9">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_2">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-145">
+    v 1.4.5
+  </a>
+<nav aria-label="v 1.4.5" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_10">
+    single module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1412">
+    v 1.4.12
+  </a>
+<nav aria-label="v 1.4.12" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_11">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_3">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1413">
+    v 1.4.13
+  </a>
+<nav aria-label="v 1.4.13" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_5">
+    bulk module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_4">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1414">
+    v 1.4.14
+  </a>
+<nav aria-label="v 1.4.14" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_5">
+    preprocess module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utils-module_1">
+    utils module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_12">
+    single module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#v-1417">
+    v 1.4.17
+  </a>
+<nav aria-label="v 1.4.17" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bulk-module_6">
+    bulk module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#single-module_13">
+    single module
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#preprocess-module_6">
+    preprocess module
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -924,6 +1301,103 @@
 <li>add <code>GLUE_pair</code>, <code>pyMOFA</code>, <code>pyMOFAART</code> module in <code>single</code></li>
 <li>add tutorial of <code>Multi omics analysis by MOFA and GLUE</code></li>
 <li>update tutorial of <code>Multi omics analysis by MOFA</code></li>
+</ul>
+<h2 id="v-140">v 1.4.0<a class="headerlink" href="#v-140" title="Permanent link">¶</a></h2>
+<h3 id="bulk2single-module_6">bulk2single module<a class="headerlink" href="#bulk2single-module_6" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>BulkTrajBlend</code> method in <code>bulk2single</code></li>
+</ul>
+<h3 id="single-module_8">single module<a class="headerlink" href="#single-module_8" title="Permanent link">¶</a></h3>
+<ul>
+<li>fix the error of <code>scnocd</code> model</li>
+<li>add <code>save</code>, <code>load</code>, and <code>get_pair_dict</code> of <code>scnocd</code> model</li>
+</ul>
+<h3 id="utils">utils<a class="headerlink" href="#utils" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>mde</code> method in utils</li>
+<li>add <code>gz</code> format support for <code>utils.read</code></li>
+</ul>
+<h2 id="v-141">v 1.4.1<a class="headerlink" href="#v-141" title="Permanent link">¶</a></h2>
+<h3 id="preprocess-module">preprocess module<a class="headerlink" href="#preprocess-module" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>pp</code>(preprocess) module included <code>qc</code>(quantity control), <code>hvg</code>(high variable feature), <code>pca</code> </li>
+<li>add <code>data_files</code> for cell cycle calculate from <a href="https://github.com/andrecossa5/Cellula/">Cellula</a> and <a href="https://github.com/lilab-bcb/pegasus/">pegasus</a></li>
+</ul>
+<h2 id="v-143">v 1.4.3<a class="headerlink" href="#v-143" title="Permanent link">¶</a></h2>
+<h3 id="preprocess-module_1">preprocess module<a class="headerlink" href="#preprocess-module_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>fix sparse preprocess error of <code>pp</code></li>
+<li>fix the trajectory import error of <code>via</code></li>
+<li>add the gene correlation analysis of trajectory </li>
+</ul>
+<h2 id="v-144">v 1.4.4<a class="headerlink" href="#v-144" title="Permanent link">¶</a></h2>
+<h3 id="single-module_9">single module<a class="headerlink" href="#single-module_9" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>panglaodb</code> database to <code>pySCSA</code> module</li>
+<li>fix the error of <code>pySCSA.cell_auto_anno</code> when some celltype not found in clusters</li>
+<li>fix the error of <code>pySCSA.cell_anno</code> when <code>rank_genes_groups</code> not consisted with clusters</li>
+<li>add <code>pySIMBA</code> module in single to perform batch correction</li>
+</ul>
+<h3 id="preprocess-module_2">preprocess module<a class="headerlink" href="#preprocess-module_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>store_layers</code> and <code>retrieve_layers</code> in <code>ov.utils</code></li>
+<li>add <code>plot_embedding_celltype</code> and <code>plot_cellproportion</code> in <code>ov.utils</code></li>
+</ul>
+<h2 id="v-145">v 1.4.5<a class="headerlink" href="#v-145" title="Permanent link">¶</a></h2>
+<h3 id="single-module_10">single module<a class="headerlink" href="#single-module_10" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>MetaTiME</code> module in single to perform celltype annotation automatically in TME</li>
+</ul>
+<h2 id="v-1412">v 1.4.12<a class="headerlink" href="#v-1412" title="Permanent link">¶</a></h2>
+<p>update <code>conda install omicverse -c conda-forge</code></p>
+<h3 id="single-module_11">single module<a class="headerlink" href="#single-module_11" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>pyTOSICA</code> module in single to perform celltype migration from reference scRNA-seq in Tranformer model</li>
+<li>add <code>atac_concat_get_index</code>,<code>atac_concat_inner</code>,<code>atac_concat_outer</code> function to merge/concat the scATAC data.</li>
+<li>fix <code>MetaTime.predicted</code> when Unknown cell type appear</li>
+</ul>
+<h3 id="preprocess-module_3">preprocess module<a class="headerlink" href="#preprocess-module_3" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>plot_embedding</code> in <code>ov.utils</code> to plot umap in special color dict</li>
+</ul>
+<h2 id="v-1413">v 1.4.13<a class="headerlink" href="#v-1413" title="Permanent link">¶</a></h2>
+<h3 id="bulk-module_5">bulk module<a class="headerlink" href="#bulk-module_5" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>mad_filtered</code> to filtered the robust genes when calculated the network in <code>ov.bulk.pyWGCNA</code> module</li>
+<li>fix <code>string_interaction</code> in <code>ov.bulk.pyPPI</code> for string-db updated.</li>
+</ul>
+<h3 id="preprocess-module_4">preprocess module<a class="headerlink" href="#preprocess-module_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>change <code>mode</code> arguement of <code>pp.preprocess</code>, normalize|HVGs：We use | to control the preprocessing step, | before for the normalisation step, either <code>shiftlog</code> or <code>pearson</code>, and | after for the highly variable gene calculation step, either <code>pearson</code> or <code>seurat</code>. Our default is <code>shiftlog|pearson</code>.</li>
+<li>add <code>ov.utils.embedding</code>,<code>ov.utils.neighbors</code>, and <code>ov.utils.stacking_vol</code></li>
+</ul>
+<h2 id="v-1414">v 1.4.14<a class="headerlink" href="#v-1414" title="Permanent link">¶</a></h2>
+<h3 id="preprocess-module_5">preprocess module<a class="headerlink" href="#preprocess-module_5" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>batch_key</code> in <code>pp.preprocess</code> and <code>pp.qc</code></li>
+</ul>
+<h3 id="utils-module_1">utils module<a class="headerlink" href="#utils-module_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>plot_ConvexHull</code> to visualize the boundary of clusters</li>
+<li>add <code>weighted_knn_trainer</code> and <code>weighted_knn_transfer</code> for multi adata integrate</li>
+</ul>
+<h3 id="single-module_12">single module<a class="headerlink" href="#single-module_12" title="Permanent link">¶</a></h3>
+<ul>
+<li>fix the error of import of <code>mofa</code> </li>
+</ul>
+<h2 id="v-1417">v 1.4.17<a class="headerlink" href="#v-1417" title="Permanent link">¶</a></h2>
+<h3 id="bulk-module_6">bulk module<a class="headerlink" href="#bulk-module_6" title="Permanent link">¶</a></h3>
+<ul>
+<li>fix the compatibility of <code>pydeseq2</code> while version is <code>0.4.0</code></li>
+<li>add <code>bulk.batch_correction</code> for multi bulk RNA-seq/microarray sample</li>
+</ul>
+<h3 id="single-module_13">single module<a class="headerlink" href="#single-module_13" title="Permanent link">¶</a></h3>
+<ul>
+<li>add <code>single.batch_correction</code> for multi single cell datasets</li>
+</ul>
+<h3 id="preprocess-module_6">preprocess module<a class="headerlink" href="#preprocess-module_6" title="Permanent link">¶</a></h3>
+<ul>
+<li>add parameter <code>layers_add</code> in <code>pp.scale</code></li>
 </ul>
 </article>
 </div>
