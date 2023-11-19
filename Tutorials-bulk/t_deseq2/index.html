@@ -428,6 +428,26 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Space
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Space
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorials-space/t_stagate/">
+        Spatial clustering and denoising expressions
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1518,7 +1538,7 @@ Licensed under the Apache License, Version 2.0.
 <p>Now we can use <code>PyDEseq2</code> to perform DESeq2 analysis like R</p>
 <p>Paper: <a href="https://www.biorxiv.org/content/10.1101/2022.12.14.520412v1">PyDESeq2: a python package for bulk RNA-seq differential expression analysis</a></p>
 <p>Code: <a href="https://github.com/owkin/PyDESeq2">https://github.com/owkin/PyDESeq2</a></p>
-<p>Colab_Reproducibility：<a href="https://colab.research.google.com/drive/1jX73eidBkDqGpd6qLASIjGENQaeZ34EU?usp=sharing">https://colab.research.google.com/drive/1jX73eidBkDqGpd6qLASIjGENQaeZ34EU?usp=sharing</a></p>
+<p>Colab_Reproducibility：<a href="https://colab.research.google.com/drive/1fZS-v0zdIYkXrEoIAM1X5kPoZVfVvY5h?usp=sharing">https://colab.research.google.com/drive/1fZS-v0zdIYkXrEoIAM1X5kPoZVfVvY5h?usp=sharing</a></p>
 </div>
 </div>
 </div>
@@ -1756,13 +1776,13 @@ data.head()</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
 <clipboard-copy for="cell-3">
@@ -1775,10 +1795,37 @@ data.head()</div>
 </div>
 </clipboard-copy>
 </div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ov</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">download_geneid_annotation_pair</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3">ov.utils.download_geneid_annotation_pair()</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-4">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">ov</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">Matrix_ID_mapping</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">'genesets/pair_GRCm39.tsv'</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">data=ov.bulk.Matrix_ID_mapping(data,'genesets/pair_GRCm39.tsv')
+<div class="clipboard-copy-txt" id="cell-4">data=ov.bulk.Matrix_ID_mapping(data,'genesets/pair_GRCm39.tsv')
 data.head()</div>
 </div>
 </div>
@@ -1931,7 +1978,7 @@ data.head()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-4">
+<clipboard-copy for="cell-5">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1943,7 +1990,7 @@ data.head()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dds</span><span class="o">=</span><span class="n">ov</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">pyDEG</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">dds=ov.bulk.pyDEG(data)</div>
+<div class="clipboard-copy-txt" id="cell-5">dds=ov.bulk.pyDEG(data)</div>
 </div>
 </div>
 </div>
@@ -1969,7 +2016,7 @@ data.head()</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-5">
+<clipboard-copy for="cell-6">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -1982,7 +2029,7 @@ data.head()</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dds</span><span class="o">.</span><span class="n">drop_duplicates_index</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'... drop_duplicates_index success'</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">dds.drop_duplicates_index()
+<div class="clipboard-copy-txt" id="cell-6">dds.drop_duplicates_index()
 print('... drop_duplicates_index success')</div>
 </div>
 </div>
@@ -2022,7 +2069,7 @@ print('... drop_duplicates_index success')</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-6">
+<clipboard-copy for="cell-7">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2036,7 +2083,7 @@ print('... drop_duplicates_index success')</div>
 <span class="n">control_groups</span><span class="o">=</span><span class="p">[</span><span class="s1">'1--1'</span><span class="p">,</span><span class="s1">'1--2'</span><span class="p">]</span>
 <span class="n">result</span><span class="o">=</span><span class="n">dds</span><span class="o">.</span><span class="n">deg_analysis</span><span class="p">(</span><span class="n">treatment_groups</span><span class="p">,</span><span class="n">control_groups</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">'DEseq2'</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">treatment_groups=['4-3','4-4']
+<div class="clipboard-copy-txt" id="cell-7">treatment_groups=['4-3','4-4']
 control_groups=['1--1','1--2']
 result=dds.deg_analysis(treatment_groups,control_groups,method='DEseq2')
 </div>
@@ -2234,7 +2281,7 @@ Log2 fold change &amp; Wald test p-value: condition Treatment vs Control
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-7">
+<clipboard-copy for="cell-8">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2248,7 +2295,7 @@ Log2 fold change &amp; Wald test p-value: condition Treatment vs Control
 <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">'log2(BaseMean)'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">print(result.shape)
+<div class="clipboard-copy-txt" id="cell-8">print(result.shape)
 result=result.loc[result['log2(BaseMean)']&gt;1]
 print(result.shape)</div>
 </div>
@@ -2290,7 +2337,7 @@ print(result.shape)</div>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-8">
+<clipboard-copy for="cell-9">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2305,7 +2352,7 @@ print(result.shape)</div>
                    <span class="n">pval_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
                    <span class="n">logp_max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8"># -1 means automatically calculates
+<div class="clipboard-copy-txt" id="cell-9"># -1 means automatically calculates
 dds.foldchange_set(fc_threshold=-1,
                    pval_threshold=0.05,
                    logp_max=10)</div>
@@ -2353,7 +2400,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-9">
+<clipboard-copy for="cell-10">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2366,7 +2413,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">dds</span><span class="o">.</span><span class="n">plot_volcano</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'DEG Analysis'</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
                  <span class="n">plot_genes_num</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">plot_genes_fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">dds.plot_volcano(title='DEG Analysis',figsize=(4,4),
+<div class="clipboard-copy-txt" id="cell-10">dds.plot_volcano(title='DEG Analysis',figsize=(4,4),
                  plot_genes_num=8,plot_genes_fontsize=12,)</div>
 </div>
 </div>
@@ -2411,7 +2458,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-10">
+<clipboard-copy for="cell-11">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2425,7 +2472,7 @@ dds.foldchange_set(fc_threshold=-1,
                 <span class="n">control_groups</span><span class="o">=</span><span class="n">control_groups</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
                  <span class="n">legend_bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.55</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">dds.plot_boxplot(genes=['Ckap2','Lef1'],treatment_groups=treatment_groups,
+<div class="clipboard-copy-txt" id="cell-11">dds.plot_boxplot(genes=['Ckap2','Lef1'],treatment_groups=treatment_groups,
                 control_groups=control_groups,figsize=(2,3),fontsize=12,
                  legend_bbox=(2,0.55))</div>
 </div>
@@ -2461,7 +2508,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-11">
+<clipboard-copy for="cell-12">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2475,7 +2522,7 @@ dds.foldchange_set(fc_threshold=-1,
                 <span class="n">control_groups</span><span class="o">=</span><span class="n">control_groups</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
                  <span class="n">legend_bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.55</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">dds.plot_boxplot(genes=['Ckap2'],treatment_groups=treatment_groups,
+<div class="clipboard-copy-txt" id="cell-12">dds.plot_boxplot(genes=['Ckap2'],treatment_groups=treatment_groups,
                 control_groups=control_groups,figsize=(2,3),fontsize=12,
                  legend_bbox=(2,0.55))</div>
 </div>
@@ -2523,7 +2570,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-12">
+<clipboard-copy for="cell-13">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2535,7 +2582,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ov</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">download_pathway_database</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">ov.utils.download_pathway_database()</div>
+<div class="clipboard-copy-txt" id="cell-13">ov.utils.download_pathway_database()</div>
 </div>
 </div>
 </div>
@@ -2576,7 +2623,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-13">
+<clipboard-copy for="cell-14">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2588,7 +2635,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pathway_dict</span><span class="o">=</span><span class="n">ov</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">geneset_prepare</span><span class="p">(</span><span class="s1">'genesets/WikiPathways_2019_Mouse.txt'</span><span class="p">,</span><span class="n">organism</span><span class="o">=</span><span class="s1">'Mouse'</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13">pathway_dict=ov.utils.geneset_prepare('genesets/WikiPathways_2019_Mouse.txt',organism='Mouse')</div>
+<div class="clipboard-copy-txt" id="cell-14">pathway_dict=ov.utils.geneset_prepare('genesets/WikiPathways_2019_Mouse.txt',organism='Mouse')</div>
 </div>
 </div>
 </div>
@@ -2615,7 +2662,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-14">
+<clipboard-copy for="cell-15">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2627,7 +2674,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">rnk</span><span class="o">=</span><span class="n">dds</span><span class="o">.</span><span class="n">ranking2gsea</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14">rnk=dds.ranking2gsea()</div>
+<div class="clipboard-copy-txt" id="cell-15">rnk=dds.ranking2gsea()</div>
 </div>
 </div>
 </div>
@@ -2653,7 +2700,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-15">
+<clipboard-copy for="cell-16">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2665,7 +2712,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gsea_obj</span><span class="o">=</span><span class="n">ov</span><span class="o">.</span><span class="n">bulk</span><span class="o">.</span><span class="n">pyGSEA</span><span class="p">(</span><span class="n">rnk</span><span class="p">,</span><span class="n">pathway_dict</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">gsea_obj=ov.bulk.pyGSEA(rnk,pathway_dict)</div>
+<div class="clipboard-copy-txt" id="cell-16">gsea_obj=ov.bulk.pyGSEA(rnk,pathway_dict)</div>
 </div>
 </div>
 </div>
@@ -2680,7 +2727,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-16">
+<clipboard-copy for="cell-17">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2692,7 +2739,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">enrich_res</span><span class="o">=</span><span class="n">gsea_obj</span><span class="o">.</span><span class="n">enrichment</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">enrich_res=gsea_obj.enrichment()</div>
+<div class="clipboard-copy-txt" id="cell-17">enrich_res=gsea_obj.enrichment()</div>
 </div>
 </div>
 </div>
@@ -2731,7 +2778,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-17">
+<clipboard-copy for="cell-18">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2743,7 +2790,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gsea_obj</span><span class="o">.</span><span class="n">enrich_res</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-17">gsea_obj.enrich_res.head()</div>
+<div class="clipboard-copy-txt" id="cell-18">gsea_obj.enrich_res.head()</div>
 </div>
 </div>
 </div>
@@ -2930,7 +2977,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-18">
+<clipboard-copy for="cell-19">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -2946,7 +2993,7 @@ dds.foldchange_set(fc_threshold=-1,
                         <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">cmap</span><span class="o">=</span><span class="s1">'YlGnBu'</span><span class="p">,</span>
                         <span class="n">text_knock</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">text_maxsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">gsea_obj.plot_enrichment(num=10,node_size=[10,20,30],
+<div class="clipboard-copy-txt" id="cell-19">gsea_obj.plot_enrichment(num=10,node_size=[10,20,30],
                         cax_loc=2.5,cax_fontsize=12,
                         fig_title='Wiki Pathway Enrichment',fig_xlabel='Fractions of genes',
                         figsize=(2,4),cmap='YlGnBu',
@@ -2995,7 +3042,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-19">
+<clipboard-copy for="cell-20">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3007,7 +3054,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gsea_obj</span><span class="o">.</span><span class="n">enrich_res</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">gsea_obj.enrich_res.index[:5]</div>
+<div class="clipboard-copy-txt" id="cell-20">gsea_obj.enrich_res.index[:5]</div>
 </div>
 </div>
 </div>
@@ -3049,7 +3096,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-20">
+<clipboard-copy for="cell-21">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3066,7 +3113,7 @@ dds.foldchange_set(fc_threshold=-1,
                   <span class="n">title_fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
                   <span class="n">title_y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-20">fig=gsea_obj.plot_gsea(term_num=1,
+<div class="clipboard-copy-txt" id="cell-21">fig=gsea_obj.plot_gsea(term_num=1,
                   gene_set_title='Matrix Metalloproteinases',
                   figsize=(3,4),
                   cmap='RdBu_r',
@@ -3098,7 +3145,7 @@ dds.foldchange_set(fc_threshold=-1,
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="CodeMirror cm-s-jupyter">
 <div class="zeroclipboard-container">
-<clipboard-copy for="cell-21">
+<clipboard-copy for="cell-22">
 <div>
 <span class="notice" hidden="">Copied!</span>
 <svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
@@ -3110,7 +3157,7 @@ dds.foldchange_set(fc_threshold=-1,
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-21"></div>
+<div class="clipboard-copy-txt" id="cell-22"></div>
 </div>
 </div>
 </div>
